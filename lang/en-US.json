@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Creator Revenue Calculator — Estimate Your Earnings on YouTube, TikTok, Twitch, Spotify & More",
+    "description": "Free monetization calculator for content creators. Estimate your monthly earnings across YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack and Pinterest."
+  },
+  "nav": {
+    "title": "Creator Revenue Calculator",
+    "theme_toggle": "Toggle theme",
+    "language": "Language",
+    "currency": "Currency"
+  },
+  "hero": {
+    "title": "How much can you earn as a creator?",
+    "subtitle": "Calculate your estimated revenue across 9 platforms. Drag the sliders and see results update in real time."
+  },
+  "tabs": {
+    "youtube": "YouTube",
+    "yt_shorts": "YT Shorts",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "spotify": "Spotify",
+    "instagram": "Instagram",
+    "kwai": "Kwai",
+    "substack": "Substack",
+    "pinterest": "Pinterest",
+    "all": "All"
+  },
+  "youtube": {
+    "title": "YouTube",
+    "subtitle": "Revenue estimate for long-form videos",
+    "views": "Monthly views",
+    "niche": "Niche",
+    "niche_finance": "Finance",
+    "niche_education": "Education",
+    "niche_gaming": "Gaming",
+    "niche_entertainment": "Entertainment",
+    "niche_lifestyle": "Lifestyle",
+    "location": "Audience location",
+    "location_us_eu": "US / Europe",
+    "location_latam": "Latin America",
+    "location_asia": "Asia",
+    "midroll": "Mid-roll ads",
+    "midroll_tooltip": "Enabling mid-roll increases revenue by ~40% for videos over 8 minutes.",
+    "rpm_effective": "Effective RPM"
+  },
+  "yt_shorts": {
+    "title": "YouTube Shorts",
+    "subtitle": "Creator Pool revenue for Shorts",
+    "views": "Monthly views",
+    "niche": "Niche",
+    "rpm_info": "Average Shorts RPM: ~$0.05/1000 views"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "subtitle": "Creativity Program revenue",
+    "views": "Monthly views",
+    "qualified": "Qualified views (%)",
+    "qualified_tooltip": "Only views over 1 minute qualify for the monetization program.",
+    "niche": "Niche",
+    "qualified_views": "Qualified views"
+  },
+  "twitch": {
+    "title": "Twitch",
+    "subtitle": "Revenue from subscriptions and ads",
+    "subs": "Tier 1 subscribers",
+    "avg_viewers": "Average concurrent viewers",
+    "hours_live": "Hours streamed / month",
+    "revenue_subs": "Sub revenue",
+    "revenue_ads": "Ad revenue"
+  },
+  "spotify": {
+    "title": "Spotify",
+    "subtitle": "Revenue from music/podcast streams",
+    "streams": "Monthly streams",
+    "rate_info": "Average rate: $0.004 per stream"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "subtitle": "Estimated revenue from posts and Reels",
+    "followers": "Followers",
+    "posts_per_month": "Posts / month",
+    "content_type": "Content type",
+    "content_reels": "Reels",
+    "content_feed": "Feed",
+    "content_stories": "Stories"
+  },
+  "kwai": {
+    "title": "Kwai",
+    "subtitle": "LATAM Creator Fund revenue",
+    "views": "Monthly views",
+    "rpm_info": "Average RPM: ~$0.15/1000 views"
+  },
+  "substack": {
+    "title": "Substack",
+    "subtitle": "Paid newsletter revenue",
+    "subscribers": "Paid subscribers",
+    "price": "Monthly price ($)",
+    "commission_info": "Substack commission: 10%"
+  },
+  "pinterest": {
+    "title": "Pinterest",
+    "subtitle": "Creator Rewards revenue",
+    "views": "Monthly views",
+    "cpm_info": "Average CPM: ~$1.50"
+  },
+  "all_platforms": {
+    "title": "All Platforms",
+    "subtitle": "Combine earnings from all platforms in one view"
+  },
+  "results": {
+    "title": "Estimated Monthly Revenue",
+    "total": "Estimated Total",
+    "breakdown": "Breakdown",
+    "share_button": "Share result",
+    "copy_link": "Copy link",
+    "copied": "✓ Copied!",
+    "disclaimer": "* Estimated values based on public averages. Actual results may vary significantly."
+  },
+  "pro": {
+    "title": "Advanced Features",
+    "export_pdf": "Export Premium PDF",
+    "reverse_calc": "Reverse Calculator",
+    "projection": "Growth Projections",
+    "save_scenarios": "Save & Compare",
+    "modal_upgrade": "Upgrade to",
+    "modal_subtitle": "Unlock professional tools for content creators and maximize your revenue strategy.",
+    "free_plan": "Free Plan",
+    "pro_plan": "Pro Plan",
+    "current_plan": "Current Plan",
+    "unlock_all": "Unlock All",
+    "feat_calculators": "9 Platform Calculators",
+    "feat_exchange": "Live Exchange Rates",
+    "feat_share": "Shareable Results",
+    "feat_everything_free": "Everything in Free",
+    "feat_pdf_reports": "Export Premium PDF Reports",
+    "feat_reverse": "Reverse Target Calculator",
+    "feat_projections": "6-12 Month Projections",
+    "feat_scenarios": "Save & Compare Scenarios",
+    "per_month": "/mo",
+    "one_time": " one-time",
+    "billed_monthly": "Billed monthly",
+    "lifetime_access": "Lifetime Access",
+    "upgrade_btn": "Upgrade to PRO"
+  },
+  "footer": {
+    "disclaimer": "This calculator provides estimates based on public data and industry averages. Actual revenue varies based on many factors including engagement, algorithms, and platform policies.",
+    "copyright": "© 2024 Creator Revenue Calculator. Educational tool."
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Creator-Einnahmenrechner — Schätzen Sie Ihre Einnahmen auf YouTube, TikTok, Twitch, Spotify und mehr",
+    "description": "Kostenloser Monetarisierungsrechner für Content-Creator. Schätzen Sie Ihre monatlichen Einnahmen auf YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack und Pinterest."
+  },
+  "nav": {
+    "title": "Creator Revenue Calculator",
+    "theme_toggle": "Thema wechseln",
+    "language": "Sprache",
+    "currency": "Währung"
+  },
+  "hero": {
+    "title": "Wie viel können Sie als Creator verdienen?",
+    "subtitle": "Berechnen Sie Ihre geschätzten Einnahmen auf 9 Plattformen. Bewegen Sie die Regler und sehen Sie die Ergebnisse in Echtzeit."
+  },
+  "tabs": {
+    "youtube": "YouTube",
+    "yt_shorts": "YT Shorts",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "spotify": "Spotify",
+    "instagram": "Instagram",
+    "kwai": "Kwai",
+    "substack": "Substack",
+    "pinterest": "Pinterest",
+    "all": "Alle"
+  },
+  "youtube": {
+    "title": "YouTube",
+    "subtitle": "Einnahmenprognose für Langform-Videos",
+    "views": "Monatliche Aufrufe",
+    "niche": "Nische",
+    "niche_finance": "Finanzen",
+    "niche_education": "Bildung",
+    "niche_gaming": "Gaming",
+    "niche_entertainment": "Unterhaltung",
+    "niche_lifestyle": "Lifestyle",
+    "location": "Zuschauerstandort",
+    "location_us_eu": "USA / Europa",
+    "location_latam": "Lateinamerika",
+    "location_asia": "Asien",
+    "midroll": "Mid-Roll-Anzeigen",
+    "midroll_tooltip": "Mid-Roll-Anzeigen erhöhen die Einnahmen um ~40% bei Videos über 8 Minuten.",
+    "rpm_effective": "Effektiver RPM"
+  },
+  "yt_shorts": {
+    "title": "YouTube Shorts",
+    "subtitle": "Creator-Pool-Einnahmen für Shorts",
+    "views": "Monatliche Aufrufe",
+    "niche": "Nische",
+    "rpm_info": "Durchschnittlicher Shorts-RPM: ~$0,05/1000 Aufrufe"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "subtitle": "Einnahmen aus dem Kreativitätsprogramm",
+    "views": "Monatliche Aufrufe",
+    "qualified": "Qualifizierte Aufrufe (%)",
+    "qualified_tooltip": "Nur Aufrufe über 1 Minute qualifizieren sich für das Monetarisierungsprogramm.",
+    "niche": "Nische",
+    "qualified_views": "Qualifizierte Aufrufe"
+  },
+  "twitch": {
+    "title": "Twitch",
+    "subtitle": "Einnahmen aus Abonnements und Anzeigen",
+    "subs": "Tier-1-Abonnenten",
+    "avg_viewers": "Durchschnittliche gleichzeitige Zuschauer",
+    "hours_live": "Live-Stunden / Monat",
+    "revenue_subs": "Abo-Einnahmen",
+    "revenue_ads": "Werbeeinnahmen"
+  },
+  "spotify": {
+    "title": "Spotify",
+    "subtitle": "Einnahmen aus Musik-/Podcast-Streams",
+    "streams": "Monatliche Streams",
+    "rate_info": "Durchschnittliche Rate: $0,004 pro Stream"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "subtitle": "Geschätzte Einnahmen aus Posts und Reels",
+    "followers": "Follower",
+    "posts_per_month": "Posts / Monat",
+    "content_type": "Inhaltstyp",
+    "content_reels": "Reels",
+    "content_feed": "Feed",
+    "content_stories": "Stories"
+  },
+  "kwai": {
+    "title": "Kwai",
+    "subtitle": "LATAM Creator Fund Einnahmen",
+    "views": "Monatliche Aufrufe",
+    "rpm_info": "Durchschnittlicher RPM: ~$0,15/1000 Aufrufe"
+  },
+  "substack": {
+    "title": "Substack",
+    "subtitle": "Einnahmen aus bezahltem Newsletter",
+    "subscribers": "Bezahlte Abonnenten",
+    "price": "Monatlicher Preis ($)",
+    "commission_info": "Substack-Provision: 10%"
+  },
+  "pinterest": {
+    "title": "Pinterest",
+    "subtitle": "Creator Rewards Einnahmen",
+    "views": "Monatliche Aufrufe",
+    "cpm_info": "Durchschnittlicher CPM: ~$1,50"
+  },
+  "all_platforms": {
+    "title": "Alle Plattformen",
+    "subtitle": "Kombinieren Sie die Einnahmen aller Plattformen in einer Ansicht"
+  },
+  "results": {
+    "title": "Geschätzte Monatliche Einnahmen",
+    "total": "Geschätztes Gesamt",
+    "breakdown": "Aufschlüsselung",
+    "share_button": "Ergebnis teilen",
+    "copy_link": "Link kopieren",
+    "copied": "✓ Kopiert!",
+    "disclaimer": "* Geschätzte Werte basierend auf öffentlichen Durchschnittswerten. Tatsächliche Ergebnisse können erheblich abweichen."
+  },
+  "pro": {
+    "title": "Erweiterte Funktionen",
+    "export_pdf": "Premium PDF exportieren",
+    "reverse_calc": "Umgekehrter Rechner",
+    "projection": "Wachstumsprognosen",
+    "save_scenarios": "Speichern & Vergleichen",
+    "modal_upgrade": "Upgrade auf",
+    "modal_subtitle": "Schalte professionelle Tools für Content Creator frei und maximiere deine Umsatzstrategie.",
+    "free_plan": "Kostenloser Plan",
+    "pro_plan": "Pro Plan",
+    "current_plan": "Aktueller Plan",
+    "unlock_all": "Alles Freischalten",
+    "feat_calculators": "9 Plattform-Rechner",
+    "feat_exchange": "Echtzeit-Wechselkurse",
+    "feat_share": "Teilbare Ergebnisse",
+    "feat_everything_free": "Alles aus dem kostenlosen Plan",
+    "feat_pdf_reports": "Premium PDF-Berichte exportieren",
+    "feat_reverse": "Umgekehrter Zielrechner",
+    "feat_projections": "6-12 Monats-Prognosen",
+    "feat_scenarios": "Szenarien speichern & vergleichen",
+    "per_month": "/Monat",
+    "one_time": " einmalig",
+    "billed_monthly": "Monatlich abgerechnet",
+    "lifetime_access": "Lebenslanger Zugang",
+    "upgrade_btn": "Auf PRO upgraden"
+  },
+  "footer": {
+    "disclaimer": "Dieser Rechner liefert Schätzungen auf Basis öffentlicher Daten und Branchendurchschnitte. Die tatsächlichen Einnahmen variieren je nach vielen Faktoren, einschließlich Engagement, Algorithmen und Plattformrichtlinien.",
+    "copyright": "© 2024 Creator Revenue Calculator. Bildungstool."
+  }
+}

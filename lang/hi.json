@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "क्रिएटर रेवेन्यू कैलकुलेटर — YouTube, TikTok, Twitch, Spotify और अन्य प्लेटफ़ॉर्म पर अपनी कमाई का अनुमान लगाएं",
+    "description": "कंटेंट क्रिएटर्स के लिए मुफ्त मुद्रीकरण कैलकुलेटर। YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack और Pinterest पर अपनी मासिक कमाई का अनुमान लगाएं।"
+  },
+  "nav": {
+    "title": "Creator Revenue Calculator",
+    "theme_toggle": "थीम बदलें",
+    "language": "भाषा",
+    "currency": "मुद्रा"
+  },
+  "hero": {
+    "title": "क्रिएटर के रूप में आप कितना कमा सकते हैं?",
+    "subtitle": "9 प्लेटफ़ॉर्म पर अपनी अनुमानित आय की गणना करें। स्लाइडर्स को खींचें और रियल-टाइम में परिणाम देखें।"
+  },
+  "tabs": {
+    "youtube": "YouTube",
+    "yt_shorts": "YT Shorts",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "spotify": "Spotify",
+    "instagram": "Instagram",
+    "kwai": "Kwai",
+    "substack": "Substack",
+    "pinterest": "Pinterest",
+    "all": "सभी"
+  },
+  "youtube": {
+    "title": "YouTube",
+    "subtitle": "लंबे वीडियो के लिए आय अनुमान",
+    "views": "मासिक व्यूज़",
+    "niche": "निच",
+    "niche_finance": "वित्त",
+    "niche_education": "शिक्षा",
+    "niche_gaming": "गेमिंग",
+    "niche_entertainment": "मनोरंजन",
+    "niche_lifestyle": "लाइफस्टाइल",
+    "location": "दर्शकों का स्थान",
+    "location_us_eu": "अमेरिका / यूरोप",
+    "location_latam": "लैटिन अमेरिका",
+    "location_asia": "एशिया",
+    "midroll": "मिड-रोल विज्ञापन",
+    "midroll_tooltip": "मिड-रोल विज्ञापन सक्रिय करने से 8 मिनट से अधिक वीडियो की आय ~40% बढ़ जाती है।",
+    "rpm_effective": "प्रभावी RPM"
+  },
+  "yt_shorts": {
+    "title": "YouTube Shorts",
+    "subtitle": "Shorts के लिए Creator Pool आय",
+    "views": "मासिक व्यूज़",
+    "niche": "निच",
+    "rpm_info": "Shorts औसत RPM: ~$0.05/1000 व्यूज़"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "subtitle": "क्रिएटिविटी प्रोग्राम आय",
+    "views": "मासिक व्यूज़",
+    "qualified": "योग्य व्यूज़ (%)",
+    "qualified_tooltip": "केवल 1 मिनट से अधिक के व्यूज़ मुद्रीकरण कार्यक्रम के लिए योग्य हैं।",
+    "niche": "निच",
+    "qualified_views": "योग्य व्यूज़"
+  },
+  "twitch": {
+    "title": "Twitch",
+    "subtitle": "सब्सक्रिप्शन और विज्ञापन आय",
+    "subs": "Tier 1 सब्सक्राइबर्स",
+    "avg_viewers": "औसत समवर्ती दर्शक",
+    "hours_live": "मासिक लाइव घंटे",
+    "revenue_subs": "सब्स आय",
+    "revenue_ads": "विज्ञापन आय"
+  },
+  "spotify": {
+    "title": "Spotify",
+    "subtitle": "संगीत/पॉडकास्ट स्ट्रीम आय",
+    "streams": "मासिक स्ट्रीम्स",
+    "rate_info": "औसत दर: $0.004 प्रति स्ट्रीम"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "subtitle": "पोस्ट और रील्स से अनुमानित आय",
+    "followers": "फ़ॉलोअर्स",
+    "posts_per_month": "मासिक पोस्ट",
+    "content_type": "कंटेंट प्रकार",
+    "content_reels": "रील्स",
+    "content_feed": "फ़ीड",
+    "content_stories": "स्टोरीज़"
+  },
+  "kwai": {
+    "title": "Kwai",
+    "subtitle": "LATAM Creator Fund आय",
+    "views": "मासिक व्यूज़",
+    "rpm_info": "औसत RPM: ~$0.15/1000 व्यूज़"
+  },
+  "substack": {
+    "title": "Substack",
+    "subtitle": "पेड न्यूज़लेटर आय",
+    "subscribers": "पेड सब्सक्राइबर्स",
+    "price": "मासिक मूल्य ($)",
+    "commission_info": "Substack कमीशन: 10%"
+  },
+  "pinterest": {
+    "title": "Pinterest",
+    "subtitle": "Creator Rewards आय",
+    "views": "मासिक व्यूज़",
+    "cpm_info": "औसत CPM: ~$1.50"
+  },
+  "all_platforms": {
+    "title": "सभी प्लेटफ़ॉर्म",
+    "subtitle": "सभी प्लेटफ़ॉर्म की कमाई को एक दृश्य में संयोजित करें"
+  },
+  "results": {
+    "title": "अनुमानित मासिक आय",
+    "total": "अनुमानित कुल",
+    "breakdown": "विवरण",
+    "share_button": "परिणाम साझा करें",
+    "copy_link": "लिंक कॉपी करें",
+    "copied": "✓ कॉपी हो गया!",
+    "disclaimer": "* सार्वजनिक औसत पर आधारित अनुमानित मूल्य। वास्तविक परिणाम काफी भिन्न हो सकते हैं।"
+  },
+  "pro": {
+    "title": "उन्नत सुविधाएँ",
+    "export_pdf": "प्रीमियम PDF निर्यात",
+    "reverse_calc": "रिवर्स कैलकुलेटर",
+    "projection": "विकास अनुमान",
+    "save_scenarios": "सहेजें और तुलना करें",
+    "modal_upgrade": "अपग्रेड करें",
+    "modal_subtitle": "कंटेंट क्रिएटर्स के लिए प्रोफेशनल टूल अनलॉक करें और अपनी राजस्व रणनीति को अधिकतम करें।",
+    "free_plan": "मुफ्त योजना",
+    "pro_plan": "Pro योजना",
+    "current_plan": "वर्तमान योजना",
+    "unlock_all": "सभी अनलॉक करें",
+    "feat_calculators": "9 प्लेटफॉर्म कैलकुलेटर",
+    "feat_exchange": "रियल-टाइम विनिमय दरें",
+    "feat_share": "साझा करने योग्य परिणाम",
+    "feat_everything_free": "मुफ्त योजना की सभी सुविधाएँ",
+    "feat_pdf_reports": "प्रीमियम PDF रिपोर्ट निर्यात करें",
+    "feat_reverse": "रिवर्स लक्ष्य कैलकुलेटर",
+    "feat_projections": "6-12 महीने का अनुमान",
+    "feat_scenarios": "परिदृश्य सहेजें और तुलना करें",
+    "per_month": "/माह",
+    "one_time": " एकमुश्त",
+    "billed_monthly": "मासिक बिलिंग",
+    "lifetime_access": "आजीवन पहुँच",
+    "upgrade_btn": "PRO में अपग्रेड करें"
+  },
+  "footer": {
+    "disclaimer": "यह कैलकुलेटर सार्वजनिक डेटा और उद्योग औसत पर आधारित अनुमान प्रदान करता है। वास्तविक आय सगाई, एल्गोरिदम और प्लेटफ़ॉर्म नीतियों सहित कई कारकों के आधार पर भिन्न होती है।",
+    "copyright": "© 2024 Creator Revenue Calculator. शैक्षिक उपकरण।"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "クリエイター収益計算機 — YouTube、TikTok、Twitch、Spotifyなどの収益を見積もる",
+    "description": "コンテンツクリエイター向けの無料マネタイズ計算機。YouTube、TikTok、Twitch、Spotify、Instagram、Kwai、Substack、Pinterestでの月間収益を見積もります。"
+  },
+  "nav": {
+    "title": "Creator Revenue Calculator",
+    "theme_toggle": "テーマ切替",
+    "language": "言語",
+    "currency": "通貨"
+  },
+  "hero": {
+    "title": "クリエイターとしてどれくらい稼げますか？",
+    "subtitle": "9つのプラットフォームでの推定収益を計算します。スライダーを動かすとリアルタイムで結果が更新されます。"
+  },
+  "tabs": {
+    "youtube": "YouTube",
+    "yt_shorts": "YT Shorts",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "spotify": "Spotify",
+    "instagram": "Instagram",
+    "kwai": "Kwai",
+    "substack": "Substack",
+    "pinterest": "Pinterest",
+    "all": "全て"
+  },
+  "youtube": {
+    "title": "YouTube",
+    "subtitle": "長尺動画の収益見積もり",
+    "views": "月間視聴回数",
+    "niche": "ニッチ",
+    "niche_finance": "ファイナンス",
+    "niche_education": "教育",
+    "niche_gaming": "ゲーム",
+    "niche_entertainment": "エンタメ",
+    "niche_lifestyle": "ライフスタイル",
+    "location": "視聴者の所在地",
+    "location_us_eu": "米国 / 欧州",
+    "location_latam": "中南米",
+    "location_asia": "アジア",
+    "midroll": "ミッドロール広告",
+    "midroll_tooltip": "ミッドロール広告を有効にすると、8分以上の動画の収益が約40%増加します。",
+    "rpm_effective": "実効RPM"
+  },
+  "yt_shorts": {
+    "title": "YouTube Shorts",
+    "subtitle": "ShortsのCreator Pool収益",
+    "views": "月間視聴回数",
+    "niche": "ニッチ",
+    "rpm_info": "Shorts平均RPM：〜$0.05/1000再生"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "subtitle": "クリエイティビティプログラムの収益",
+    "views": "月間視聴回数",
+    "qualified": "対象視聴回数（%）",
+    "qualified_tooltip": "1分以上の視聴のみがマネタイズプログラムの対象となります。",
+    "niche": "ニッチ",
+    "qualified_views": "対象視聴回数"
+  },
+  "twitch": {
+    "title": "Twitch",
+    "subtitle": "サブスクリプションと広告の収益",
+    "subs": "Tier 1サブスクライバー",
+    "avg_viewers": "平均同時視聴者数",
+    "hours_live": "月間配信時間",
+    "revenue_subs": "サブスク収益",
+    "revenue_ads": "広告収益"
+  },
+  "spotify": {
+    "title": "Spotify",
+    "subtitle": "音楽/ポッドキャストストリーム収益",
+    "streams": "月間ストリーム数",
+    "rate_info": "平均レート：$0.004/ストリーム"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "subtitle": "投稿とリールの推定収益",
+    "followers": "フォロワー",
+    "posts_per_month": "月間投稿数",
+    "content_type": "コンテンツタイプ",
+    "content_reels": "リール",
+    "content_feed": "フィード",
+    "content_stories": "ストーリーズ"
+  },
+  "kwai": {
+    "title": "Kwai",
+    "subtitle": "LATAM Creator Fund収益",
+    "views": "月間視聴回数",
+    "rpm_info": "平均RPM：〜$0.15/1000再生"
+  },
+  "substack": {
+    "title": "Substack",
+    "subtitle": "有料ニュースレター収益",
+    "subscribers": "有料購読者",
+    "price": "月額料金（$）",
+    "commission_info": "Substack手数料：10%"
+  },
+  "pinterest": {
+    "title": "Pinterest",
+    "subtitle": "Creator Rewards収益",
+    "views": "月間視聴回数",
+    "cpm_info": "平均CPM：〜$1.50"
+  },
+  "all_platforms": {
+    "title": "全プラットフォーム",
+    "subtitle": "すべてのプラットフォームの収益を1つのビューにまとめます"
+  },
+  "results": {
+    "title": "推定月間収益",
+    "total": "推定合計",
+    "breakdown": "内訳",
+    "share_button": "結果を共有",
+    "copy_link": "リンクをコピー",
+    "copied": "✓ コピーしました！",
+    "disclaimer": "* 公開平均値に基づく推定値です。実際の結果は大きく異なる場合があります。"
+  },
+  "pro": {
+    "title": "高度な機能",
+    "export_pdf": "プレミアムPDFエクスポート",
+    "reverse_calc": "逆算カリキュレーター",
+    "projection": "成長予測",
+    "save_scenarios": "保存＆比較",
+    "modal_upgrade": "アップグレード",
+    "modal_subtitle": "コンテンツクリエイター向けのプロフェッショナルツールを解放し、収益戦略を最大化しましょう。",
+    "free_plan": "無料プラン",
+    "pro_plan": "Proプラン",
+    "current_plan": "現在のプラン",
+    "unlock_all": "すべて解放",
+    "feat_calculators": "9プラットフォーム計算機",
+    "feat_exchange": "リアルタイム為替レート",
+    "feat_share": "共有可能な結果",
+    "feat_everything_free": "無料プランのすべて",
+    "feat_pdf_reports": "プレミアムPDFレポートのエクスポート",
+    "feat_reverse": "逆算目標カリキュレーター",
+    "feat_projections": "6〜12ヶ月の予測",
+    "feat_scenarios": "シナリオの保存＆比較",
+    "per_month": "/月",
+    "one_time": " 一回払い",
+    "billed_monthly": "月額課金",
+    "lifetime_access": "永久アクセス",
+    "upgrade_btn": "PROにアップグレード"
+  },
+  "footer": {
+    "disclaimer": "この計算機は、公開データと業界平均に基づく見積もりを提供します。実際の収益は、エンゲージメント、アルゴリズム、プラットフォームポリシーなど多くの要因により異なります。",
+    "copyright": "© 2024 Creator Revenue Calculator. 教育ツール。"
+  }
+}

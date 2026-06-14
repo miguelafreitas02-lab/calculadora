@@ -1,0 +1,107 @@
+/* ===== RTL Support ===== */
+/* Activated when html[dir="rtl"] (Arabic) */
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] .header-inner {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-controls {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .tabs-nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .tab-btn {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-label {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .toggle-wrapper {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .radio-group {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .platform-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breakdown-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breakdown-label {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breakdown-bar-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breakdown-bar-label {
+  text-align: left;
+}
+
+[dir="rtl"] .share-section {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .slider-range-labels {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .custom-select {
+  padding-right: var(--space-md);
+  padding-left: var(--space-2xl);
+  background-position: left 12px center;
+}
+
+[dir="rtl"] .hero {
+  text-align: center;
+}
+
+[dir="rtl"] .site-footer {
+  text-align: center;
+}
+
+/* RTL slider direction */
+[dir="rtl"] .custom-slider {
+  direction: ltr;
+}
+
+/* Tooltip positioning */
+[dir="rtl"] .tooltip-content.tooltip-above,
+[dir="rtl"] .tooltip-content.tooltip-below {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) translateY(0);
+}
+
+[dir="rtl"] .tooltip-content::before {
+  left: auto;
+  right: 50%;
+  margin-right: -4px;
+  margin-left: 0;
+}
+
+/* Fix mobile header for RTL */
+@media (max-width: 767px) {
+  [dir="rtl"] .header-inner {
+    flex-direction: column;
+  }
+
+  [dir="rtl"] .header-brand {
+    flex-direction: row-reverse;
+  }
+}

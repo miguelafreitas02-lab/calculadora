@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "크리에이터 수익 계산기 — YouTube, TikTok, Twitch, Spotify 등의 수익을 추정하세요",
+    "description": "콘텐츠 크리에이터를 위한 무료 수익화 계산기. YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack, Pinterest에서의 월간 수익을 추정합니다."
+  },
+  "nav": {
+    "title": "Creator Revenue Calculator",
+    "theme_toggle": "테마 변경",
+    "language": "언어",
+    "currency": "통화"
+  },
+  "hero": {
+    "title": "크리에이터로서 얼마나 벌 수 있을까요?",
+    "subtitle": "9개 플랫폼에서의 예상 수익을 계산하세요. 슬라이더를 움직이면 실시간으로 결과가 업데이트됩니다."
+  },
+  "tabs": {
+    "youtube": "YouTube",
+    "yt_shorts": "YT Shorts",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "spotify": "Spotify",
+    "instagram": "Instagram",
+    "kwai": "Kwai",
+    "substack": "Substack",
+    "pinterest": "Pinterest",
+    "all": "전체"
+  },
+  "youtube": {
+    "title": "YouTube",
+    "subtitle": "장편 영상 수익 추정",
+    "views": "월간 조회수",
+    "niche": "니치",
+    "niche_finance": "금융",
+    "niche_education": "교육",
+    "niche_gaming": "게임",
+    "niche_entertainment": "엔터테인먼트",
+    "niche_lifestyle": "라이프스타일",
+    "location": "시청자 위치",
+    "location_us_eu": "미국 / 유럽",
+    "location_latam": "중남미",
+    "location_asia": "아시아",
+    "midroll": "미드롤 광고",
+    "midroll_tooltip": "미드롤 광고를 활성화하면 8분 이상 영상의 수익이 약 40% 증가합니다.",
+    "rpm_effective": "유효 RPM"
+  },
+  "yt_shorts": {
+    "title": "YouTube Shorts",
+    "subtitle": "Shorts Creator Pool 수익",
+    "views": "월간 조회수",
+    "niche": "니치",
+    "rpm_info": "Shorts 평균 RPM: ~$0.05/1000회"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "subtitle": "크리에이티비티 프로그램 수익",
+    "views": "월간 조회수",
+    "qualified": "적격 조회수 (%)",
+    "qualified_tooltip": "1분 이상 시청한 조회수만 수익화 프로그램 대상입니다.",
+    "niche": "니치",
+    "qualified_views": "적격 조회수"
+  },
+  "twitch": {
+    "title": "Twitch",
+    "subtitle": "구독 및 광고 수익",
+    "subs": "Tier 1 구독자",
+    "avg_viewers": "평균 동시 시청자",
+    "hours_live": "월간 방송 시간",
+    "revenue_subs": "구독 수익",
+    "revenue_ads": "광고 수익"
+  },
+  "spotify": {
+    "title": "Spotify",
+    "subtitle": "음악/팟캐스트 스트림 수익",
+    "streams": "월간 스트림",
+    "rate_info": "평균 요율: $0.004/스트림"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "subtitle": "게시물 및 릴스 예상 수익",
+    "followers": "팔로워",
+    "posts_per_month": "월간 게시물",
+    "content_type": "콘텐츠 유형",
+    "content_reels": "릴스",
+    "content_feed": "피드",
+    "content_stories": "스토리"
+  },
+  "kwai": {
+    "title": "Kwai",
+    "subtitle": "LATAM Creator Fund 수익",
+    "views": "월간 조회수",
+    "rpm_info": "평균 RPM: ~$0.15/1000회"
+  },
+  "substack": {
+    "title": "Substack",
+    "subtitle": "유료 뉴스레터 수익",
+    "subscribers": "유료 구독자",
+    "price": "월간 가격 ($)",
+    "commission_info": "Substack 수수료: 10%"
+  },
+  "pinterest": {
+    "title": "Pinterest",
+    "subtitle": "Creator Rewards 수익",
+    "views": "월간 조회수",
+    "cpm_info": "평균 CPM: ~$1.50"
+  },
+  "all_platforms": {
+    "title": "전체 플랫폼",
+    "subtitle": "모든 플랫폼의 수익을 하나의 뷰로 결합합니다"
+  },
+  "results": {
+    "title": "예상 월간 수익",
+    "total": "예상 총계",
+    "breakdown": "상세 내역",
+    "share_button": "결과 공유",
+    "copy_link": "링크 복사",
+    "copied": "✓ 복사됨!",
+    "disclaimer": "* 공개 평균을 기반으로 한 추정값입니다. 실제 결과는 크게 다를 수 있습니다."
+  },
+  "pro": {
+    "title": "고급 기능",
+    "export_pdf": "프리미엄 PDF 내보내기",
+    "reverse_calc": "역산 계산기",
+    "projection": "성장 예측",
+    "save_scenarios": "저장 및 비교",
+    "modal_upgrade": "업그레이드",
+    "modal_subtitle": "콘텐츠 크리에이터를 위한 전문 도구를 잠금 해제하고 수익 전략을 극대화하세요.",
+    "free_plan": "무료 플랜",
+    "pro_plan": "Pro 플랜",
+    "current_plan": "현재 플랜",
+    "unlock_all": "모두 잠금 해제",
+    "feat_calculators": "9개 플랫폼 계산기",
+    "feat_exchange": "실시간 환율",
+    "feat_share": "공유 가능한 결과",
+    "feat_everything_free": "무료 플랜의 모든 기능",
+    "feat_pdf_reports": "프리미엄 PDF 보고서 내보내기",
+    "feat_reverse": "역산 목표 계산기",
+    "feat_projections": "6-12개월 예측",
+    "feat_scenarios": "시나리오 저장 및 비교",
+    "per_month": "/월",
+    "one_time": " 일회성",
+    "billed_monthly": "월간 결제",
+    "lifetime_access": "평생 이용",
+    "upgrade_btn": "PRO로 업그레이드"
+  },
+  "footer": {
+    "disclaimer": "이 계산기는 공개 데이터와 업계 평균을 기반으로 추정치를 제공합니다. 실제 수익은 참여도, 알고리즘 및 플랫폼 정책을 포함한 많은 요인에 따라 달라집니다.",
+    "copyright": "© 2024 Creator Revenue Calculator. 교육용 도구."
+  }
+}

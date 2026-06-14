@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "حاسبة إيرادات المبدعين — قدّر أرباحك على YouTube وTikTok وTwitch وSpotify والمزيد",
+    "description": "حاسبة تحقيق الدخل المجانية لمنشئي المحتوى. قدّر أرباحك الشهرية عبر YouTube وTikTok وTwitch وSpotify وInstagram وKwai وSubstack وPinterest."
+  },
+  "nav": {
+    "title": "Creator Revenue Calculator",
+    "theme_toggle": "تبديل السمة",
+    "language": "اللغة",
+    "currency": "العملة"
+  },
+  "hero": {
+    "title": "كم يمكنك أن تكسب كمبدع محتوى؟",
+    "subtitle": "احسب إيراداتك المقدرة عبر 9 منصات. اسحب أشرطة التمرير وشاهد النتائج تتحدث في الوقت الفعلي."
+  },
+  "tabs": {
+    "youtube": "YouTube",
+    "yt_shorts": "YT Shorts",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "spotify": "Spotify",
+    "instagram": "Instagram",
+    "kwai": "Kwai",
+    "substack": "Substack",
+    "pinterest": "Pinterest",
+    "all": "الكل"
+  },
+  "youtube": {
+    "title": "YouTube",
+    "subtitle": "تقدير الإيرادات للفيديوهات الطويلة",
+    "views": "المشاهدات الشهرية",
+    "niche": "التخصص",
+    "niche_finance": "المالية",
+    "niche_education": "التعليم",
+    "niche_gaming": "الألعاب",
+    "niche_entertainment": "الترفيه",
+    "niche_lifestyle": "نمط الحياة",
+    "location": "موقع الجمهور",
+    "location_us_eu": "أمريكا / أوروبا",
+    "location_latam": "أمريكا اللاتينية",
+    "location_asia": "آسيا",
+    "midroll": "إعلانات منتصف الفيديو",
+    "midroll_tooltip": "تفعيل إعلانات المنتصف يزيد الإيرادات بنحو 40% للفيديوهات التي تزيد عن 8 دقائق.",
+    "rpm_effective": "RPM الفعلي"
+  },
+  "yt_shorts": {
+    "title": "YouTube Shorts",
+    "subtitle": "إيرادات Creator Pool لـ Shorts",
+    "views": "المشاهدات الشهرية",
+    "niche": "التخصص",
+    "rpm_info": "متوسط RPM لـ Shorts: ~$0.05/1000 مشاهدة"
+  },
+  "tiktok": {
+    "title": "TikTok",
+    "subtitle": "إيرادات برنامج الإبداع",
+    "views": "المشاهدات الشهرية",
+    "qualified": "المشاهدات المؤهلة (%)",
+    "qualified_tooltip": "فقط المشاهدات التي تزيد عن دقيقة واحدة مؤهلة لبرنامج تحقيق الدخل.",
+    "niche": "التخصص",
+    "qualified_views": "المشاهدات المؤهلة"
+  },
+  "twitch": {
+    "title": "Twitch",
+    "subtitle": "إيرادات الاشتراكات والإعلانات",
+    "subs": "مشتركو Tier 1",
+    "avg_viewers": "متوسط المشاهدين المتزامنين",
+    "hours_live": "ساعات البث / شهر",
+    "revenue_subs": "إيرادات الاشتراكات",
+    "revenue_ads": "إيرادات الإعلانات"
+  },
+  "spotify": {
+    "title": "Spotify",
+    "subtitle": "إيرادات بث الموسيقى/البودكاست",
+    "streams": "البث الشهري",
+    "rate_info": "متوسط المعدل: $0.004 لكل بث"
+  },
+  "instagram": {
+    "title": "Instagram",
+    "subtitle": "الإيرادات المقدرة من المنشورات والريلز",
+    "followers": "المتابعون",
+    "posts_per_month": "المنشورات / شهر",
+    "content_type": "نوع المحتوى",
+    "content_reels": "ريلز",
+    "content_feed": "فيد",
+    "content_stories": "ستوريز"
+  },
+  "kwai": {
+    "title": "Kwai",
+    "subtitle": "إيرادات صندوق المبدعين LATAM",
+    "views": "المشاهدات الشهرية",
+    "rpm_info": "متوسط RPM: ~$0.15/1000 مشاهدة"
+  },
+  "substack": {
+    "title": "Substack",
+    "subtitle": "إيرادات النشرة الإخبارية المدفوعة",
+    "subscribers": "المشتركون المدفوعون",
+    "price": "السعر الشهري ($)",
+    "commission_info": "عمولة Substack: 10%"
+  },
+  "pinterest": {
+    "title": "Pinterest",
+    "subtitle": "إيرادات مكافآت المبدعين",
+    "views": "المشاهدات الشهرية",
+    "cpm_info": "متوسط CPM: ~$1.50"
+  },
+  "all_platforms": {
+    "title": "جميع المنصات",
+    "subtitle": "اجمع الأرباح من جميع المنصات في عرض واحد"
+  },
+  "results": {
+    "title": "الإيرادات الشهرية المقدرة",
+    "total": "الإجمالي المقدر",
+    "breakdown": "التفصيل",
+    "share_button": "مشاركة النتيجة",
+    "copy_link": "نسخ الرابط",
+    "copied": "✓ تم النسخ!",
+    "disclaimer": "* قيم مقدرة بناءً على متوسطات عامة. قد تختلف النتائج الفعلية بشكل كبير."
+  },
+  "pro": {
+    "title": "ميزات متقدمة",
+    "export_pdf": "تصدير PDF مميز",
+    "reverse_calc": "حاسبة عكسية",
+    "projection": "توقعات النمو",
+    "save_scenarios": "حفظ ومقارنة",
+    "modal_upgrade": "الترقية إلى",
+    "modal_subtitle": "افتح أدوات احترافية لصناع المحتوى وحقق أقصى استفادة من استراتيجية الإيرادات.",
+    "free_plan": "الخطة المجانية",
+    "pro_plan": "خطة Pro",
+    "current_plan": "الخطة الحالية",
+    "unlock_all": "فتح الكل",
+    "feat_calculators": "9 حاسبات منصات",
+    "feat_exchange": "أسعار صرف فورية",
+    "feat_share": "نتائج قابلة للمشاركة",
+    "feat_everything_free": "كل ما في الخطة المجانية",
+    "feat_pdf_reports": "تصدير تقارير PDF مميزة",
+    "feat_reverse": "حاسبة الأهداف العكسية",
+    "feat_projections": "توقعات 6-12 شهرًا",
+    "feat_scenarios": "حفظ ومقارنة السيناريوهات",
+    "per_month": "/شهر",
+    "one_time": " مرة واحدة",
+    "billed_monthly": "فوترة شهرية",
+    "lifetime_access": "وصول مدى الحياة",
+    "upgrade_btn": "الترقية إلى PRO"
+  },
+  "footer": {
+    "disclaimer": "توفر هذه الحاسبة تقديرات بناءً على البيانات العامة ومتوسطات الصناعة. تختلف الإيرادات الفعلية بناءً على عوامل عديدة بما في ذلك التفاعل والخوارزميات وسياسات المنصات.",
+    "copyright": "© 2024 Creator Revenue Calculator. أداة تعليمية."
+  }
+}

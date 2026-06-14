@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Revenue Calculator — Estimate Your Earnings on YouTube, TikTok, Twitch, Spotify &amp; More</title>
+  <meta name="description" content="Free monetization calculator for content creators. Estimate your monthly earnings across YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack and Pinterest.">
+  <meta name="keywords" content="creator calculator, youtube earnings, tiktok money, twitch revenue, spotify streams, instagram monetization, kwai, substack, pinterest, RPM calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Creator Revenue Calculator">
+  <meta property="og:description" content="Estimate your monthly earnings across 9 creator platforms.">
+  <meta property="og:image" content="./assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/ads.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/rtl.css">
+
+  <!-- JS -->
+  <script type="module" src="./js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span data-i18n="nav.title">Creator Revenue Calculator</span>
+      </div>
+      <div class="header-controls">
+        <!-- Language Selector -->
+        <select id="language-select" class="custom-select select-sm" aria-label="Language">
+          <option value="pt-BR">🇧🇷 Português</option>
+          <option value="en-US" selected>🇺🇸 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="ja">🇯🇵 日本語</option>
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="hi">🇮🇳 हिन्दी</option>
+          <option value="ar">🇸🇦 العربية</option>
+        </select>
+
+        <!-- Currency Selector -->
+        <select id="currency-select" class="custom-select select-sm" aria-label="Currency">
+          <option value="USD">$ USD</option>
+          <option value="BRL">R$ BRL</option>
+          <option value="EUR">€ EUR</option>
+          <option value="GBP">£ GBP</option>
+          <option value="JPY">¥ JPY</option>
+          <option value="KRW">₩ KRW</option>
+          <option value="INR">₹ INR</option>
+          <option value="ARS">ARS$ ARS</option>
+          <option value="MXN">MX$ MXN</option>
+          <option value="CAD">CA$ CAD</option>
+          <option value="AUD">A$ AUD</option>
+        </select>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme" data-i18n-attr="aria-label:nav.theme_toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Ad: Leaderboard ===== -->
+  <div class="ad-container ad-leaderboard" id="ad-slot-leaderboard" aria-hidden="true" role="complementary" aria-label="Advertisement"></div>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero animate-target" id="hero">
+    <div class="container">
+      <h1 class="hero-title" data-i18n="hero.title">How much can you earn as a creator?</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Calculate your estimated revenue across 9 platforms. Drag the sliders and see results update in real time.</p>
+    </div>
+  </section>
+
+  <!-- ===== Main Content ===== -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Tab Navigation -->
+      <nav class="tabs-nav" role="tablist" aria-label="Platform calculators">
+        <!-- YouTube -->
+        <button class="tab-btn" role="tab" data-tab="youtube" aria-selected="true" aria-controls="panel-youtube" id="tab-youtube" tabindex="0">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81z" fill="#FF0000"/><path d="M9.6 15.6V8.4l6.4 3.6-6.4 3.6z" fill="#fff"/></svg></span>
+          <span data-i18n="tabs.youtube">YouTube</span>
+        </button>
+        <!-- YouTube Shorts -->
+        <button class="tab-btn" role="tab" data-tab="yt-shorts" aria-selected="false" aria-controls="panel-yt-shorts" id="tab-yt-shorts" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 14.65v-5.3L15 12l-5 2.65z" fill="#fff"/><path d="M17.77 10.32c-.77-.32-1.2-.5-1.2-.5L18 8.72a3.28 3.28 0 0 0-3.26-5.67l-1.42.82a3.28 3.28 0 0 0-5.26.04l-1.63-.94A3.28 3.28 0 0 0 3.18 8.6l1.63.94A3.28 3.28 0 0 0 7.1 15.2l1.42-.82a3.28 3.28 0 0 0 5.26-.04l1.63.94a3.28 3.28 0 0 0 3.26-5.67l-.9-.49z" fill="#FF0000"/><path d="M10 14.65v-5.3L15 12l-5 2.65z" fill="#fff"/></svg></span>
+          <span data-i18n="tabs.yt_shorts">YT Shorts</span>
+        </button>
+        <!-- TikTok -->
+        <button class="tab-btn" role="tab" data-tab="tiktok" aria-selected="false" aria-controls="panel-tiktok" id="tab-tiktok" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.37-1.94 1.68-4.66 2.43-7.14 2.05-2.67-.42-5.02-2.18-6.19-4.64-1.2-2.43-1.07-5.5.42-7.8 1.48-2.31 4.1-3.71 6.81-3.69 1.06.01 2.12.22 3.12.63v4.21c-.81-.39-1.74-.52-2.61-.39-1.29.17-2.42 1.1-2.92 2.29-.49 1.17-.41 2.61.27 3.7.67 1.1 1.94 1.83 3.24 1.8 1.34-.05 2.59-.87 3.12-2.1.28-.66.42-1.39.42-2.11V.02z" fill="#010101"/><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.37-1.94 1.68-4.66 2.43-7.14 2.05-2.67-.42-5.02-2.18-6.19-4.64-1.2-2.43-1.07-5.5.42-7.8 1.48-2.31 4.1-3.71 6.81-3.69 1.06.01 2.12.22 3.12.63v4.21c-.81-.39-1.74-.52-2.61-.39-1.29.17-2.42 1.1-2.92 2.29-.49 1.17-.41 2.61.27 3.7.67 1.1 1.94 1.83 3.24 1.8 1.34-.05 2.59-.87 3.12-2.1.28-.66.42-1.39.42-2.11V.02z" fill="#25F4EE" opacity="0.7" transform="translate(-0.8, -0.4)"/><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.37-1.94 1.68-4.66 2.43-7.14 2.05-2.67-.42-5.02-2.18-6.19-4.64-1.2-2.43-1.07-5.5.42-7.8 1.48-2.31 4.1-3.71 6.81-3.69 1.06.01 2.12.22 3.12.63v4.21c-.81-.39-1.74-.52-2.61-.39-1.29.17-2.42 1.1-2.92 2.29-.49 1.17-.41 2.61.27 3.7.67 1.1 1.94 1.83 3.24 1.8 1.34-.05 2.59-.87 3.12-2.1.28-.66.42-1.39.42-2.11V.02z" fill="#FE2C55" opacity="0.7" transform="translate(0.8, 0.4)"/></svg></span>
+          <span data-i18n="tabs.tiktok">TikTok</span>
+        </button>
+        <!-- Twitch -->
+        <button class="tab-btn" role="tab" data-tab="twitch" aria-selected="false" aria-controls="panel-twitch" id="tab-twitch" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.15 0L.5 4.11v16.06h5.57V24h3.72l3.71-3.83h5.57L24.64 14.54V0H2.15zm2.23 2.23h18.04v11.13l-3.71 3.83h-5.57L9.43 20.9v-3.71H4.38V2.23zM9.43 12.46h2.23V6.69H9.43v5.77zm6.12 0h2.23V6.69h-2.23v5.77z" fill="#9146FF"/></svg></span>
+          <span data-i18n="tabs.twitch">Twitch</span>
+        </button>
+        <!-- Spotify -->
+        <button class="tab-btn" role="tab" data-tab="spotify" aria-selected="false" aria-controls="panel-spotify" id="tab-spotify" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.31c-.22.35-.68.46-1.03.25-2.82-1.72-6.37-2.11-10.55-1.16-.4.09-.8-.15-.9-.55-.09-.4.15-.8.55-.9 4.57-1.04 8.49-.6 11.68 1.33.35.22.46.68.25 1.03zm1.47-3.27c-.27.44-.85.58-1.29.31-3.23-1.98-8.15-2.56-11.97-1.4-.5.15-1.02-.13-1.17-.62-.15-.5.13-1.02.62-1.17 4.36-1.33 9.78-.68 13.5 1.59.44.27.58.85.31 1.29zm.13-3.4C15.23 8.37 8.85 8.16 5.16 9.3c-.6.18-1.23-.16-1.41-.76-.18-.6.16-1.23.76-1.41 4.24-1.3 11.28-1.05 15.73 1.67.55.34.72 1.05.39 1.6-.34.55-1.05.72-1.6.39z" fill="#1DB954"/></svg></span>
+          <span data-i18n="tabs.spotify">Spotify</span>
+        </button>
+        <!-- Instagram -->
+        <button class="tab-btn" role="tab" data-tab="instagram" aria-selected="false" aria-controls="panel-instagram" id="tab-instagram" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm4.5 5.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5zm0 1.8a2.95 2.95 0 1 1 0 5.9 2.95 2.95 0 0 1 0-5.9zM17.25 6a.88.88 0 1 0 0 1.75.88.88 0 0 0 0-1.75z" fill="url(#ig-grad)"/></svg></span>
+          <span data-i18n="tabs.instagram">Instagram</span>
+        </button>
+        <!-- Kwai -->
+        <button class="tab-btn" role="tab" data-tab="kwai" aria-selected="false" aria-controls="panel-kwai" id="tab-kwai" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="5" fill="#FF4906"/><path d="M8 6h2.5v4.5L14 6h3l-4.5 5L17 18h-3l-3.5-5.5V18H8V6z" fill="#fff"/></svg></span>
+          <span data-i18n="tabs.kwai">Kwai</span>
+        </button>
+        <!-- Substack -->
+        <button class="tab-btn" role="tab" data-tab="substack" aria-selected="false" aria-controls="panel-substack" id="tab-substack" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.54 6.42h-21v2.78h21V6.42zm-21-4.2v2.78h21V2.22h-21zm0 8.4v11.16L12.04 16l10.5 5.78V10.62h-21z" fill="#FF6719"/></svg></span>
+          <span data-i18n="tabs.substack">Substack</span>
+        </button>
+        <!-- Pinterest -->
+        <button class="tab-btn" role="tab" data-tab="pinterest" aria-selected="false" aria-controls="panel-pinterest" id="tab-pinterest" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.42 7.63 11.15-.11-.94-.2-2.39.04-3.42.22-.93 1.4-5.94 1.4-5.94s-.36-.71-.36-1.77c0-1.66.96-2.9 2.16-2.9 1.02 0 1.51.77 1.51 1.68 0 1.03-.65 2.56-1 3.99-.28 1.19.6 2.16 1.78 2.16 2.14 0 3.78-2.26 3.78-5.52 0-2.89-2.07-4.9-5.03-4.9-3.43 0-5.44 2.57-5.44 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.19-.34 1.36-.05.22-.18.27-.41.16-1.55-.72-2.52-2.99-2.52-4.81 0-3.92 2.85-7.53 8.21-7.53 4.31 0 7.66 3.07 7.66 7.18 0 4.28-2.7 7.73-6.45 7.73-1.26 0-2.45-.66-2.85-1.43l-.78 2.96c-.28 1.08-1.04 2.43-1.55 3.26A12 12 0 0 0 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z" fill="#E60023"/></svg></span>
+          <span data-i18n="tabs.pinterest">Pinterest</span>
+        </button>
+        <!-- All Platforms -->
+        <button class="tab-btn" role="tab" data-tab="all" aria-selected="false" aria-controls="panel-all" id="tab-all" tabindex="-1">
+          <span class="tab-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="9" height="9" rx="2" fill="#6C5CE7"/><rect x="13" y="2" width="9" height="9" rx="2" fill="#A855F7"/><rect x="2" y="13" width="9" height="9" rx="2" fill="#EC4899"/><rect x="13" y="13" width="9" height="9" rx="2" fill="#6C5CE7"/></svg></span>
+          <span data-i18n="tabs.all">Todas</span>
+        </button>
+      </nav>
+
+      <!-- Calculator Grid -->
+      <div class="calculator-grid">
+
+        <!-- ===== LEFT: Calculator Panels ===== -->
+        <div class="calculator-panels-wrapper">
+
+          <!-- YouTube Panel -->
+          <article class="calculator-panel tab-panel" id="panel-youtube" role="tabpanel" aria-labelledby="tab-youtube" aria-hidden="false">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-youtube);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="youtube.title">YouTube</h2>
+                <p class="platform-subtitle" data-i18n="youtube.subtitle">Revenue estimate for long-form videos</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="yt-views" data-i18n="youtube.views">Monthly views</label>
+              <div class="slider-container">
+                <span class="slider-value-label">100K</span>
+                <input type="range" id="yt-views" class="custom-slider" aria-label="YouTube monthly views" aria-valuemin="1000" aria-valuemax="10000000">
+                <div class="slider-range-labels"><span>1K</span><span>10M</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="yt-niche" data-i18n="youtube.niche">Niche</label>
+              <select id="yt-niche" class="custom-select">
+                <option value="finance" data-i18n="youtube.niche_finance">Finance</option>
+                <option value="education" data-i18n="youtube.niche_education">Education</option>
+                <option value="gaming" data-i18n="youtube.niche_gaming">Gaming</option>
+                <option value="entertainment" selected data-i18n="youtube.niche_entertainment">Entertainment</option>
+                <option value="lifestyle" data-i18n="youtube.niche_lifestyle">Lifestyle</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" data-i18n="youtube.location">Audience location</label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio" name="yt-location" id="yt-loc-us" value="us_eu" checked>
+                  <label for="yt-loc-us" data-i18n="youtube.location_us_eu">US / Europe</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="yt-location" id="yt-loc-latam" value="latam">
+                  <label for="yt-loc-latam" data-i18n="youtube.location_latam">Latin America</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="yt-location" id="yt-loc-asia" value="asia">
+                  <label for="yt-loc-asia" data-i18n="youtube.location_asia">Asia</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="toggle-wrapper">
+                <label class="toggle-switch" for="yt-midroll">
+                  <input type="checkbox" id="yt-midroll">
+                  <span class="toggle-track"></span>
+                </label>
+                <span class="toggle-label-text" data-i18n="youtube.midroll">Mid-roll ads</span>
+                <span class="tooltip-trigger" data-tooltip="Enabling mid-roll increases revenue by ~40% for videos over 8 minutes." data-i18n-attr="data-tooltip:youtube.midroll_tooltip">?</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="breakdown-item">
+                <span class="breakdown-label" data-i18n="youtube.rpm_effective">Effective RPM</span>
+                <span class="breakdown-value" id="yt-rpm-value">$6.00</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- YouTube Shorts Panel -->
+          <article class="calculator-panel tab-panel" id="panel-yt-shorts" role="tabpanel" aria-labelledby="tab-yt-shorts" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: #000000;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 12L9 16.5V7.5L16 12Z" fill="#FFF"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="yt_shorts.title">YouTube Shorts</h2>
+                <p class="platform-subtitle" data-i18n="yt_shorts.subtitle">Creator Pool revenue for Shorts</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="yts-views" data-i18n="yt_shorts.views">Monthly views</label>
+              <div class="slider-container">
+                <span class="slider-value-label">1M</span>
+                <input type="range" id="yts-views" class="custom-slider" aria-label="YouTube Shorts monthly views" aria-valuemin="10000" aria-valuemax="500000000">
+                <div class="slider-range-labels"><span>10K</span><span>500M</span></div>
+              </div>
+            </div>
+
+            <p class="platform-subtitle" style="margin-top: var(--space-md);" data-i18n="yt_shorts.rpm_info">Average Shorts RPM: ~$0.05/1000 views</p>
+          </article>
+
+          <!-- TikTok Panel -->
+          <article class="calculator-panel tab-panel" id="panel-tiktok" role="tabpanel" aria-labelledby="tab-tiktok" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-tiktok);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="tiktok.title">TikTok</h2>
+                <p class="platform-subtitle" data-i18n="tiktok.subtitle">Creativity Program revenue</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tt-views" data-i18n="tiktok.views">Monthly views</label>
+              <div class="slider-container">
+                <span class="slider-value-label">500K</span>
+                <input type="range" id="tt-views" class="custom-slider" aria-label="TikTok monthly views" aria-valuemin="10000" aria-valuemax="100000000">
+                <div class="slider-range-labels"><span>10K</span><span>100M</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tt-qualified">
+                <span data-i18n="tiktok.qualified">Qualified views (%)</span>
+                <span class="tooltip-trigger" data-tooltip="Only views over 1 minute qualify for the monetization program." data-i18n-attr="data-tooltip:tiktok.qualified_tooltip">?</span>
+              </label>
+              <div class="slider-container">
+                <span class="slider-value-label">40</span>
+                <input type="range" id="tt-qualified" class="custom-slider" aria-label="TikTok qualified views percentage" aria-valuemin="10" aria-valuemax="80">
+                <div class="slider-range-labels"><span>10%</span><span>80%</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tt-niche" data-i18n="tiktok.niche">Niche</label>
+              <select id="tt-niche" class="custom-select">
+                <option value="finance" data-i18n="youtube.niche_finance">Finance</option>
+                <option value="education" data-i18n="youtube.niche_education">Education</option>
+                <option value="entertainment" selected data-i18n="youtube.niche_entertainment">Entertainment</option>
+                <option value="gaming" data-i18n="youtube.niche_gaming">Gaming</option>
+                <option value="lifestyle" data-i18n="youtube.niche_lifestyle">Lifestyle</option>
+              </select>
+            </div>
+          </article>
+
+          <!-- Twitch Panel -->
+          <article class="calculator-panel tab-panel" id="panel-twitch" role="tabpanel" aria-labelledby="tab-twitch" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-twitch);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="twitch.title">Twitch</h2>
+                <p class="platform-subtitle" data-i18n="twitch.subtitle">Revenue from subscriptions and ads</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tw-subs" data-i18n="twitch.subs">Tier 1 subscribers</label>
+              <div class="slider-container">
+                <span class="slider-value-label">100</span>
+                <input type="range" id="tw-subs" class="custom-slider" aria-label="Twitch Tier 1 subscribers" aria-valuemin="0" aria-valuemax="50000">
+                <div class="slider-range-labels"><span>0</span><span>50K</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tw-viewers" data-i18n="twitch.avg_viewers">Average concurrent viewers</label>
+              <div class="slider-container">
+                <span class="slider-value-label">50</span>
+                <input type="range" id="tw-viewers" class="custom-slider" aria-label="Twitch average viewers" aria-valuemin="1" aria-valuemax="100000">
+                <div class="slider-range-labels"><span>1</span><span>100K</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tw-hours" data-i18n="twitch.hours_live">Hours streamed / month</label>
+              <div class="slider-container">
+                <span class="slider-value-label">80</span>
+                <input type="range" id="tw-hours" class="custom-slider" aria-label="Twitch hours live per month" aria-valuemin="1" aria-valuemax="300">
+                <div class="slider-range-labels"><span>1h</span><span>300h</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Spotify Panel -->
+          <article class="calculator-panel tab-panel" id="panel-spotify" role="tabpanel" aria-labelledby="tab-spotify" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-spotify);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="spotify.title">Spotify</h2>
+                <p class="platform-subtitle" data-i18n="spotify.subtitle">Revenue from music/podcast streams</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sp-streams" data-i18n="spotify.streams">Monthly streams</label>
+              <div class="slider-container">
+                <span class="slider-value-label">50K</span>
+                <input type="range" id="sp-streams" class="custom-slider" aria-label="Spotify monthly streams" aria-valuemin="1000" aria-valuemax="100000000">
+                <div class="slider-range-labels"><span>1K</span><span>100M</span></div>
+              </div>
+            </div>
+
+            <p class="platform-subtitle" style="margin-top: var(--space-md);" data-i18n="spotify.rate_info">Average rate: $0.004 per stream</p>
+          </article>
+
+          <!-- Instagram Panel -->
+          <article class="calculator-panel tab-panel" id="panel-instagram" role="tabpanel" aria-labelledby="tab-instagram" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-instagram);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="instagram.title">Instagram</h2>
+                <p class="platform-subtitle" data-i18n="instagram.subtitle">Estimated revenue from posts and Reels</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ig-followers" data-i18n="instagram.followers">Followers</label>
+              <div class="slider-container">
+                <span class="slider-value-label">50K</span>
+                <input type="range" id="ig-followers" class="custom-slider" aria-label="Instagram followers" aria-valuemin="1000" aria-valuemax="10000000">
+                <div class="slider-range-labels"><span>1K</span><span>10M</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ig-posts" data-i18n="instagram.posts_per_month">Posts / month</label>
+              <div class="slider-container">
+                <span class="slider-value-label">10</span>
+                <input type="range" id="ig-posts" class="custom-slider" aria-label="Instagram posts per month" aria-valuemin="1" aria-valuemax="30">
+                <div class="slider-range-labels"><span>1</span><span>30</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ig-type" data-i18n="instagram.content_type">Content type</label>
+              <select id="ig-type" class="custom-select">
+                <option value="reels" selected data-i18n="instagram.content_reels">Reels</option>
+                <option value="feed" data-i18n="instagram.content_feed">Feed</option>
+                <option value="stories" data-i18n="instagram.content_stories">Stories</option>
+              </select>
+            </div>
+          </article>
+
+          <!-- Kwai Panel -->
+          <article class="calculator-panel tab-panel" id="panel-kwai" role="tabpanel" aria-labelledby="tab-kwai" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-kwai);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 6H10V18H7V6ZM17 6L12 12L17 18H13L9 13V11L13 6H17Z" fill="#FFF"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="kwai.title">Kwai</h2>
+                <p class="platform-subtitle" data-i18n="kwai.subtitle">LATAM Creator Fund revenue</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="kw-views" data-i18n="kwai.views">Monthly views</label>
+              <div class="slider-container">
+                <span class="slider-value-label">100K</span>
+                <input type="range" id="kw-views" class="custom-slider" aria-label="Kwai monthly views" aria-valuemin="10000" aria-valuemax="50000000">
+                <div class="slider-range-labels"><span>10K</span><span>50M</span></div>
+              </div>
+            </div>
+
+            <p class="platform-subtitle" style="margin-top: var(--space-md);" data-i18n="kwai.rpm_info">Average RPM: ~$0.15/1000 views</p>
+          </article>
+
+          <!-- Substack Panel -->
+          <article class="calculator-panel tab-panel" id="panel-substack" role="tabpanel" aria-labelledby="tab-substack" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-substack);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15.5 15.5C15.5 16.8 14.2 18 12 18C9.8 18 8.5 16.8 8.5 15.5H11C11 15.8 11.4 16 12 16C12.6 16 13 15.8 13 15.5C13 15 12 14.8 10 14.4C7.5 13.9 6 12.8 6 10.5C6 7.8 8.2 6 12 6C15.8 6 18 7.8 18 10.5H15.5C15.5 9.2 14.2 8 12 8C9.8 8 8.5 9.2 8.5 10.5C8.5 11 9.5 11.2 11.5 11.6C14 12.1 15.5 13.2 15.5 15.5Z" fill="#FFF"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="substack.title">Substack</h2>
+                <p class="platform-subtitle" data-i18n="substack.subtitle">Paid newsletter revenue</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ss-subs" data-i18n="substack.subscribers">Paid subscribers</label>
+              <div class="slider-container">
+                <span class="slider-value-label">100</span>
+                <input type="range" id="ss-subs" class="custom-slider" aria-label="Substack paid subscribers" aria-valuemin="0" aria-valuemax="50000">
+                <div class="slider-range-labels"><span>0</span><span>50K</span></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="ss-price" data-i18n="substack.price">Monthly price ($)</label>
+              <div class="slider-container">
+                <span class="slider-value-label">$10</span>
+                <input type="range" id="ss-price" class="custom-slider" aria-label="Substack monthly price" aria-valuemin="5" aria-valuemax="50">
+                <div class="slider-range-labels"><span>$5</span><span>$50</span></div>
+              </div>
+            </div>
+
+            <p class="platform-subtitle" style="margin-top: var(--space-md);" data-i18n="substack.commission_info">Substack commission: 10%</p>
+          </article>
+
+          <!-- Pinterest Panel -->
+          <article class="calculator-panel tab-panel" id="panel-pinterest" role="tabpanel" aria-labelledby="tab-pinterest" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--color-pinterest);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 4.1c-4.4 0-8 3.6-8 8 0 3.4 2.1 6.3 5.1 7.4-.1-.6-.1-1.6 0-2.3l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.3-.9 3.5-.2 1 .5 1.9 1.5 1.9 1.9 0 3.3-2 3.3-4.8 0-2.5-1.8-4.3-4.4-4.3-3 0-4.8 2.3-4.8 4.6 0 .9.3 1.9.8 2.4.1.1.1.2.1.3-.1.3-.2 1-.3 1.2-.1.2-.2.2-.4.1-1.4-.6-2.3-2.7-2.3-4.3 0-3.5 2.6-6.8 7.4-6.8 3.9 0 6.9 2.8 6.9 6.4 0 3.8-2.4 6.9-5.8 6.9-1.1 0-2.2-.6-2.6-1.3l-.7 2.7c-.3 1-.9 2.2-1.4 2.9A8 8 0 0 0 12 20.1c4.4 0 8-3.6 8-8s-3.6-8-8-8z" fill="#FFF"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="pinterest.title">Pinterest</h2>
+                <p class="platform-subtitle" data-i18n="pinterest.subtitle">Creator Rewards revenue</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="pin-views" data-i18n="pinterest.views">Monthly views</label>
+              <div class="slider-container">
+                <span class="slider-value-label">100K</span>
+                <input type="range" id="pin-views" class="custom-slider" aria-label="Pinterest monthly views" aria-valuemin="10000" aria-valuemax="100000000">
+                <div class="slider-range-labels"><span>10K</span><span>100M</span></div>
+              </div>
+            </div>
+
+            <p class="platform-subtitle" style="margin-top: var(--space-md);" data-i18n="pinterest.cpm_info">Average CPM: ~$1.50</p>
+          </article>
+
+          <!-- All Platforms Panel -->
+          <article class="calculator-panel tab-panel" id="panel-all" role="tabpanel" aria-labelledby="tab-all" aria-hidden="true">
+            <div class="platform-header">
+              <div class="platform-icon" style="background: var(--gradient-hero);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+              </div>
+              <div>
+                <h2 class="platform-title" data-i18n="all_platforms.title">All Platforms</h2>
+                <p class="platform-subtitle" data-i18n="all_platforms.subtitle">Combine earnings from all platforms in one view</p>
+              </div>
+            </div>
+
+            <!-- YouTube -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-youtube); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">YouTube</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-yt-views">Views</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">100K</span>
+                  <input type="range" id="all-yt-views" class="custom-slider" aria-label="YouTube views">
+                  <div class="slider-range-labels"><span>1K</span><span>10M</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- YT Shorts -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: #000; width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M16 12L9 16.5V7.5L16 12Z" fill="#FFF"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">YT Shorts</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-yts-views">Views</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">1M</span>
+                  <input type="range" id="all-yts-views" class="custom-slider" aria-label="YT Shorts views">
+                  <div class="slider-range-labels"><span>10K</span><span>500M</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TikTok -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-tiktok); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">TikTok</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-tt-views">Views</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">500K</span>
+                  <input type="range" id="all-tt-views" class="custom-slider" aria-label="TikTok views">
+                  <div class="slider-range-labels"><span>10K</span><span>100M</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Twitch -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-twitch); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 2H3v16h5v4l4-4h5l4-4V2z"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">Twitch</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-tw-subs">Subs</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">100</span>
+                  <input type="range" id="all-tw-subs" class="custom-slider" aria-label="Twitch subs">
+                  <div class="slider-range-labels"><span>0</span><span>50K</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spotify -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-spotify); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">Spotify</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-sp-streams">Streams</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">50K</span>
+                  <input type="range" id="all-sp-streams" class="custom-slider" aria-label="Spotify streams">
+                  <div class="slider-range-labels"><span>1K</span><span>100M</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-instagram); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">Instagram</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-ig-followers">Followers</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">50K</span>
+                  <input type="range" id="all-ig-followers" class="custom-slider" aria-label="Instagram followers">
+                  <div class="slider-range-labels"><span>1K</span><span>10M</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kwai -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-kwai); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 6H10V18H7V6ZM17 6L12 12L17 18H13L9 13V11L13 6H17Z" fill="#FFF"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">Kwai</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-kw-views">Views</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">100K</span>
+                  <input type="range" id="all-kw-views" class="custom-slider" aria-label="Kwai views">
+                  <div class="slider-range-labels"><span>10K</span><span>50M</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Substack -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-substack); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15.5 15.5C15.5 16.8 14.2 18 12 18C9.8 18 8.5 16.8 8.5 15.5H11C11 15.8 11.4 16 12 16C12.6 16 13 15.8 13 15.5C13 15 12 14.8 10 14.4C7.5 13.9 6 12.8 6 10.5C6 7.8 8.2 6 12 6C15.8 6 18 7.8 18 10.5H15.5C15.5 9.2 14.2 8 12 8C9.8 8 8.5 9.2 8.5 10.5C8.5 11 9.5 11.2 11.5 11.6C14 12.1 15.5 13.2 15.5 15.5Z" fill="#FFF"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">Substack</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-ss-subs">Subscribers</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">100</span>
+                  <input type="range" id="all-ss-subs" class="custom-slider" aria-label="Substack subscribers">
+                  <div class="slider-range-labels"><span>0</span><span>50K</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pinterest -->
+            <div class="all-platform-section">
+              <div class="platform-header">
+                <div class="platform-icon" style="background: var(--color-pinterest); width: 24px; height: 24px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 4.1c-4.4 0-8 3.6-8 8 0 3.4 2.1 6.3 5.1 7.4-.1-.6-.1-1.6 0-2.3l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.3-.9 3.5-.2 1 .5 1.9 1.5 1.9 1.9 0 3.3-2 3.3-4.8 0-2.5-1.8-4.3-4.4-4.3-3 0-4.8 2.3-4.8 4.6 0 .9.3 1.9.8 2.4.1.1.1.2.1.3-.1.3-.2 1-.3 1.2-.1.2-.2.2-.4.1-1.4-.6-2.3-2.7-2.3-4.3 0-3.5 2.6-6.8 7.4-6.8 3.9 0 6.9 2.8 6.9 6.4 0 3.8-2.4 6.9-5.8 6.9-1.1 0-2.2-.6-2.6-1.3l-.7 2.7c-.3 1-.9 2.2-1.4 2.9A8 8 0 0 0 12 20.1c4.4 0 8-3.6 8-8s-3.6-8-8-8z" fill="#FFF"/></svg>
+                </div>
+                <span class="platform-title" style="font-size: 0.9rem;">Pinterest</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="all-pin-views">Views</label>
+                <div class="slider-container">
+                  <span class="slider-value-label">100K</span>
+                  <input type="range" id="all-pin-views" class="custom-slider" aria-label="Pinterest views">
+                  <div class="slider-range-labels"><span>10K</span><span>100M</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ad: In-content -->
+          <div class="ad-container ad-in-content" id="ad-slot-in-content" aria-hidden="true" role="complementary" aria-label="Advertisement"></div>
+
+        </div>
+
+        <!-- ===== RIGHT: Results Panel ===== -->
+        <aside class="results-panel animate-target" id="results-panel">
+          <h2 class="result-total-label" data-i18n="results.title">Estimated Monthly Revenue</h2>
+          <div class="result-total-value mono" id="result-total-value" data-current-value="0">$0.00</div>
+
+          <div class="result-divider"></div>
+
+          <h3 class="breakdown-title" data-i18n="results.breakdown">Breakdown</h3>
+          <div class="breakdown-list" id="breakdown-list"></div>
+
+          <div class="result-divider"></div>
+
+          <!-- Share Buttons -->
+          <div class="share-section">
+            <button class="btn btn-primary btn-sm" id="share-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+              <span data-i18n="results.share_button">Share result</span>
+            </button>
+            <button class="btn btn-outline btn-sm" id="copy-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <span data-i18n="results.copy_link">Copy link</span>
+            </button>
+          </div>
+
+          <div class="share-url-display" id="share-url-display"></div>
+
+          <div class="result-divider"></div>
+
+          <!-- PRO Features -->
+          <div class="pro-features-section">
+            <h3 class="pro-features-title"><span data-i18n="pro.title">Advanced Features</span> <span class="badge-pro">PRO</span></h3>
+            <div class="pro-features-grid">
+              <button class="pro-feature-card open-pro-modal">
+                <span class="pro-feature-icon">📄</span>
+                <span class="pro-feature-text" data-i18n="pro.export_pdf">Exportar PDF Premium</span>
+              </button>
+              <button class="pro-feature-card open-pro-modal">
+                <span class="pro-feature-icon">🔄</span>
+                <span class="pro-feature-text" data-i18n="pro.reverse_calc">Calculadora Inversa</span>
+              </button>
+              <button class="pro-feature-card open-pro-modal">
+                <span class="pro-feature-icon">📈</span>
+                <span class="pro-feature-text" data-i18n="pro.projection">Projeções de Crescimento</span>
+              </button>
+              <button class="pro-feature-card open-pro-modal">
+                <span class="pro-feature-icon">💾</span>
+                <span class="pro-feature-text" data-i18n="pro.save_scenarios">Salvar e Comparar</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="results-disclaimer" data-i18n="results.disclaimer">* Estimated values based on public averages. Actual results may vary significantly.</p>
+
+          <!-- Ad: Rectangle Sidebar -->
+          <div class="ad-container ad-rectangle" id="ad-slot-rectangle" aria-hidden="true" role="complementary" aria-label="Advertisement" style="margin-top: var(--space-xl);"></div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text" data-i18n="footer.disclaimer">This calculator provides estimates based on public data and industry averages. Actual revenue varies based on many factors including engagement, algorithms, and platform policies.</p>
+      <p class="footer-text" data-i18n="footer.copyright">© 2024 Creator Revenue Calculator. Educational tool.</p>
+    </div>
+  </footer>
+
+  <!-- Ad: Sticky Footer (mobile only) -->
+  <div class="ad-container ad-sticky-footer" id="ad-slot-sticky-footer" aria-hidden="true" role="complementary" aria-label="Advertisement"></div>
+
+  <!-- ===== PRO Modal ===== -->
+  <dialog class="pro-modal" id="pro-modal">
+    <div class="pro-modal-container">
+      <button class="pro-modal-close" id="close-pro-modal" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div class="pro-modal-header">
+        <h2 class="pro-modal-title"><span data-i18n="pro.modal_upgrade">Upgrade to</span> <span class="text-gradient-pro">PRO</span></h2>
+        <p class="pro-modal-subtitle" data-i18n="pro.modal_subtitle">Unlock professional tools for content creators and maximize your revenue strategy.</p>
+      </div>
+
+      <div class="pro-plans-grid">
+        <!-- Free Plan -->
+        <div class="pro-plan-card">
+          <h3 class="plan-name" data-i18n="pro.free_plan">Free Plan</h3>
+          <p class="plan-price">$0</p>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_calculators">9 Platform Calculators</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_exchange">Live Exchange Rates</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_share">Shareable Results</span></li>
+            <li class="disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="pro.export_pdf">Premium PDF Export</span></li>
+            <li class="disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="pro.reverse_calc">Reverse Calculator</span></li>
+            <li class="disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="pro.projection">Growth Projections</span></li>
+          </ul>
+          <div class="plan-current-badge" data-i18n="pro.current_plan">Current Plan</div>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="pro-plan-card highlighted">
+          <div class="plan-badge-popular" data-i18n="pro.unlock_all">Unlock All</div>
+          <h3 class="plan-name text-gradient-pro" data-i18n="pro.pro_plan">Pro Plan</h3>
+          <div class="plan-price-options">
+            <label class="price-radio">
+              <input type="radio" name="pro_billing" value="monthly" checked>
+              <div class="radio-content">
+                <span class="price">$4.99<span class="period" data-i18n="pro.per_month">/mo</span></span>
+                <span class="desc" data-i18n="pro.billed_monthly">Billed monthly</span>
+              </div>
+            </label>
+            <label class="price-radio">
+              <input type="radio" name="pro_billing" value="lifetime">
+              <div class="radio-content">
+                <span class="price">$29.00<span class="period" data-i18n="pro.one_time"> one-time</span></span>
+                <span class="desc" data-i18n="pro.lifetime_access">Lifetime Access</span>
+              </div>
+            </label>
+          </div>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_everything_free">Everything in Free</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_pdf_reports">Export Premium PDF Reports</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_reverse">Reverse Target Calculator</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_projections">6-12 Month Projections</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="pro.feat_scenarios">Save & Compare Scenarios</span></li>
+          </ul>
+          <a href="#" onclick="var w=window.open('','_blank'); w.document.write('<!DOCTYPE html><html><head><title>Checkout</title><style>body{font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background:#f8f9fa;}h1{color:#333;}</style></head><body><h1>Em breve</h1></body></html>'); return false;" class="btn btn-primary btn-checkout">
+            <span data-i18n="pro.upgrade_btn">Upgrade to PRO</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+</body>
+</html>
