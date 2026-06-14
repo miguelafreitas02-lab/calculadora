@@ -23,7 +23,7 @@ import { calculateAllPlatforms } from './calculators/all-platforms.js';
 
 // ===== Initialization =====
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function initApp() {
   // 1. i18n
   await initI18n();
 
@@ -58,7 +58,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelectorAll('.animate-target').forEach(el => {
     el.classList.add('animate-in');
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 // ===== Slider Initialization =====
 
