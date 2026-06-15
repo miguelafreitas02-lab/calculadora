@@ -4,7 +4,7 @@
     "description": "콘텐츠 크리에이터를 위한 무료 수익화 계산기. YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack, Pinterest에서의 월간 수익을 추정합니다."
   },
   "nav": {
-    "title": "Creator Revenue Calculator",
+    "title": "크리에이터 수익 계산기",
     "theme_toggle": "테마 변경",
     "language": "언어",
     "currency": "통화"
@@ -145,5 +145,31 @@
   "footer": {
     "disclaimer": "이 계산기는 공개 데이터와 업계 평균을 기반으로 추정치를 제공합니다. 실제 수익은 참여도, 알고리즘 및 플랫폼 정책을 포함한 많은 요인에 따라 달라집니다.",
     "copyright": "© 2026 Creator Revenue Calculator. 교육용 도구."
+  },
+  "auth": {
+    "login_btn": "로그인",
+    "badge_free": "무료",
+    "badge_pro": "PRO",
+    "plan_free": "플랜: 무료",
+    "plan_pro": "플랜: Pro",
+    "upgrade_btn": "Pro로 업그레이드",
+    "logout_btn": "로그아웃",
+    "tab_login": "로그인",
+    "tab_signup": "가입하기",
+    "email_label": "이메일",
+    "password_label": "비밀번호",
+    "confirm_password_label": "비밀번호 확인",
+    "submit_login": "로그인",
+    "submit_signup": "계정 생성",
+    "forgot_password": "비밀번호를 잊으셨나요?",
+    "or": "또는",
+    "google_login": "Google로 계속",
+    "err_invalid_email": "유효하지 않은 이메일입니다.",
+    "err_user_not_found": "사용자를 찾을 수 없습니다.",
+    "err_wrong_password": "잘못된 비밀번호입니다.",
+    "err_email_in_use": "이미 사용 중인 이메일입니다.",
+    "err_weak_password": "비밀번호는 8자 이상이어야 합니다.",
+    "err_default": "인증 오류. 다시 시도하세요.",
+    "reset_email_sent": "복구 이메일이 전송되었습니다."
   }
 }

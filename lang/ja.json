@@ -4,7 +4,7 @@
     "description": "コンテンツクリエイター向けの無料マネタイズ計算機。YouTube、TikTok、Twitch、Spotify、Instagram、Kwai、Substack、Pinterestでの月間収益を見積もります。"
   },
   "nav": {
-    "title": "Creator Revenue Calculator",
+    "title": "クリエイター収益計算ツール",
     "theme_toggle": "テーマ切替",
     "language": "言語",
     "currency": "通貨"
@@ -145,5 +145,31 @@
   "footer": {
     "disclaimer": "この計算機は、公開データと業界平均に基づく見積もりを提供します。実際の収益は、エンゲージメント、アルゴリズム、プラットフォームポリシーなど多くの要因により異なります。",
     "copyright": "© 2026 Creator Revenue Calculator. 教育ツール。"
+  },
+  "auth": {
+    "login_btn": "ログイン",
+    "badge_free": "無料",
+    "badge_pro": "PRO",
+    "plan_free": "プラン: 無料",
+    "plan_pro": "プラン: Pro",
+    "upgrade_btn": "Proにアップグレード",
+    "logout_btn": "ログアウト",
+    "tab_login": "ログイン",
+    "tab_signup": "サインアップ",
+    "email_label": "メールアドレス",
+    "password_label": "パスワード",
+    "confirm_password_label": "パスワードの確認",
+    "submit_login": "ログイン",
+    "submit_signup": "アカウント作成",
+    "forgot_password": "パスワードをお忘れですか？",
+    "or": "または",
+    "google_login": "Googleで続行",
+    "err_invalid_email": "無効なメールアドレスです。",
+    "err_user_not_found": "ユーザーが見つかりません。",
+    "err_wrong_password": "パスワードが間違っています。",
+    "err_email_in_use": "このメールアドレスは既に使用されています。",
+    "err_weak_password": "パスワードは8文字以上である必要があります。",
+    "err_default": "認証エラー。もう一度お試しください。",
+    "reset_email_sent": "再設定メールを送信しました。"
   }
 }

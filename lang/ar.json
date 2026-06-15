@@ -4,7 +4,7 @@
     "description": "حاسبة تحقيق الدخل المجانية لمنشئي المحتوى. قدّر أرباحك الشهرية عبر YouTube وTikTok وTwitch وSpotify وInstagram وKwai وSubstack وPinterest."
   },
   "nav": {
-    "title": "Creator Revenue Calculator",
+    "title": "حاسبة إيرادات منشئي المحتوى",
     "theme_toggle": "تبديل السمة",
     "language": "اللغة",
     "currency": "العملة"
@@ -145,5 +145,31 @@
   "footer": {
     "disclaimer": "توفر هذه الحاسبة تقديرات بناءً على البيانات العامة ومتوسطات الصناعة. تختلف الإيرادات الفعلية بناءً على عوامل عديدة بما في ذلك التفاعل والخوارزميات وسياسات المنصات.",
     "copyright": "© 2026 Creator Revenue Calculator. أداة تعليمية."
+  },
+  "auth": {
+    "login_btn": "تسجيل الدخول",
+    "badge_free": "مجاني",
+    "badge_pro": "PRO",
+    "plan_free": "الخطة: مجاني",
+    "plan_pro": "الخطة: Pro",
+    "upgrade_btn": "الترقية إلى Pro",
+    "logout_btn": "تسجيل الخروج",
+    "tab_login": "تسجيل الدخول",
+    "tab_signup": "إنشاء حساب",
+    "email_label": "البريد الإلكتروني",
+    "password_label": "كلمة المرور",
+    "confirm_password_label": "تأكيد كلمة المرور",
+    "submit_login": "تسجيل الدخول",
+    "submit_signup": "إنشاء حساب",
+    "forgot_password": "هل نسيت كلمة المرور؟",
+    "or": "أو",
+    "google_login": "المتابعة باستخدام Google",
+    "err_invalid_email": "بريد إلكتروني غير صالح.",
+    "err_user_not_found": "المستخدم غير موجود.",
+    "err_wrong_password": "كلمة مرور خاطئة.",
+    "err_email_in_use": "البريد الإلكتروني مستخدم بالفعل.",
+    "err_weak_password": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+    "err_default": "خطأ في المصادقة. حاول مرة أخرى.",
+    "reset_email_sent": "تم إرسال بريد الاسترداد الإلكتروني."
   }
 }

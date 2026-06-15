@@ -1,7 +1,7 @@
 /* ===== Ad Container Styles ===== */
 
 .ad-container {
-  display: flex;
+  display: none !important; /* Temporarily hidden until AdSense is configured */
   align-items: center;
   justify-content: center;
   background: var(--color-surface);

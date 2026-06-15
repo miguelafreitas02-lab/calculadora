@@ -4,7 +4,7 @@
     "description": "Calculadora de monetização gratuita para criadores de conteúdo. Estime seus ganhos mensais no YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack e Pinterest."
   },
   "nav": {
-    "title": "Creator Revenue Calculator",
+    "title": "Calculadora de Receita para Criadores",
     "theme_toggle": "Alternar tema",
     "language": "Idioma",
     "currency": "Moeda"
@@ -145,5 +145,31 @@
   "footer": {
     "disclaimer": "Esta calculadora fornece apenas estimativas baseadas em dados públicos e médias do setor. Os valores reais de receita variam conforme muitos fatores, incluindo engajamento, algoritmos e políticas de cada plataforma.",
     "copyright": "© 2026 Creator Revenue Calculator. Ferramenta educacional."
+  },
+  "auth": {
+    "login_btn": "Entrar",
+    "badge_free": "FREE",
+    "badge_pro": "PRO",
+    "plan_free": "Plano: Free",
+    "plan_pro": "Plano: Pro",
+    "upgrade_btn": "Upgrade para Pro",
+    "logout_btn": "Sair",
+    "tab_login": "Entrar",
+    "tab_signup": "Criar conta",
+    "email_label": "Email",
+    "password_label": "Senha",
+    "confirm_password_label": "Confirmar Senha",
+    "submit_login": "Entrar",
+    "submit_signup": "Criar conta",
+    "forgot_password": "Esqueci minha senha?",
+    "or": "ou",
+    "google_login": "Entrar com Google",
+    "err_invalid_email": "Email inválido.",
+    "err_user_not_found": "Usuário não encontrado.",
+    "err_wrong_password": "Senha incorreta.",
+    "err_email_in_use": "Email já está em uso.",
+    "err_weak_password": "A senha deve ter pelo menos 8 caracteres.",
+    "err_default": "Erro na autenticação. Tente novamente.",
+    "reset_email_sent": "Email de recuperação enviado."
   }
 }

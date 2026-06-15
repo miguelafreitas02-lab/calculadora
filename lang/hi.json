@@ -4,7 +4,7 @@
     "description": "कंटेंट क्रिएटर्स के लिए मुफ्त मुद्रीकरण कैलकुलेटर। YouTube, TikTok, Twitch, Spotify, Instagram, Kwai, Substack और Pinterest पर अपनी मासिक कमाई का अनुमान लगाएं।"
   },
   "nav": {
-    "title": "Creator Revenue Calculator",
+    "title": "क्रिएटर रेवेन्यू कैलकुलेटर",
     "theme_toggle": "थीम बदलें",
     "language": "भाषा",
     "currency": "मुद्रा"
@@ -145,5 +145,31 @@
   "footer": {
     "disclaimer": "यह कैलकुलेटर सार्वजनिक डेटा और उद्योग औसत पर आधारित अनुमान प्रदान करता है। वास्तविक आय सगाई, एल्गोरिदम और प्लेटफ़ॉर्म नीतियों सहित कई कारकों के आधार पर भिन्न होती है।",
     "copyright": "© 2026 Creator Revenue Calculator. शैक्षिक उपकरण।"
+  },
+  "auth": {
+    "login_btn": "लॉग इन",
+    "badge_free": "मुफ़्त",
+    "badge_pro": "PRO",
+    "plan_free": "योजना: मुफ़्त",
+    "plan_pro": "योजना: Pro",
+    "upgrade_btn": "Pro में अपग्रेड करें",
+    "logout_btn": "लॉग आउट",
+    "tab_login": "लॉग इन",
+    "tab_signup": "साइन अप",
+    "email_label": "ईमेल",
+    "password_label": "पासवर्ड",
+    "confirm_password_label": "पासवर्ड की पुष्टि करें",
+    "submit_login": "लॉग इन",
+    "submit_signup": "खाता बनाएं",
+    "forgot_password": "पासवर्ड भूल गए?",
+    "or": "या",
+    "google_login": "Google के साथ जारी रखें",
+    "err_invalid_email": "अमान्य ईमेल।",
+    "err_user_not_found": "उपयोगकर्ता नहीं मिला।",
+    "err_wrong_password": "गलत पासवर्ड।",
+    "err_email_in_use": "ईमेल पहले से ही उपयोग में है।",
+    "err_weak_password": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए।",
+    "err_default": "प्रमाणीकरण त्रुटि। पुन: प्रयास करें।",
+    "reset_email_sent": "रिकवरी ईमेल भेजा गया।"
   }
 }

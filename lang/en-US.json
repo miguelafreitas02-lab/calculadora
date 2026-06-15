@@ -145,5 +145,31 @@
   "footer": {
     "disclaimer": "This calculator provides estimates based on public data and industry averages. Actual revenue varies based on many factors including engagement, algorithms, and platform policies.",
     "copyright": "© 2026 Creator Revenue Calculator. Educational tool."
+  },
+  "auth": {
+    "login_btn": "Log in",
+    "badge_free": "FREE",
+    "badge_pro": "PRO",
+    "plan_free": "Plan: Free",
+    "plan_pro": "Plan: Pro",
+    "upgrade_btn": "Upgrade to Pro",
+    "logout_btn": "Log out",
+    "tab_login": "Log in",
+    "tab_signup": "Sign up",
+    "email_label": "Email",
+    "password_label": "Password",
+    "confirm_password_label": "Confirm Password",
+    "submit_login": "Log in",
+    "submit_signup": "Create account",
+    "forgot_password": "Forgot password?",
+    "or": "or",
+    "google_login": "Continue with Google",
+    "err_invalid_email": "Invalid email.",
+    "err_user_not_found": "User not found.",
+    "err_wrong_password": "Wrong password.",
+    "err_email_in_use": "Email already in use.",
+    "err_weak_password": "Password must be at least 8 characters.",
+    "err_default": "Authentication error. Try again.",
+    "reset_email_sent": "Recovery email sent."
   }
 }

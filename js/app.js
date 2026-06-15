@@ -20,6 +20,7 @@ import { calculateKwai } from './calculators/kwai.js';
 import { calculateSubstack } from './calculators/substack.js';
 import { calculatePinterest } from './calculators/pinterest.js';
 import { calculateAllPlatforms } from './calculators/all-platforms.js';
+import { initAuth } from './auth.js';
 
 // ===== Initialization =====
 
@@ -47,6 +48,9 @@ async function initApp() {
 
   // 8. Ads
   initAds();
+
+  // 9. Auth
+  initAuth();
 
   // Register global listeners
   registerEventListeners();
@@ -192,12 +196,25 @@ function registerEventListeners() {
   // Pro Modal Interactions
   const proModal = document.getElementById('pro-modal');
   const closeProModal = document.getElementById('close-pro-modal');
-  const openProButtons = document.querySelectorAll('.open-pro-modal');
+  const proFeatureCards = document.querySelectorAll('.pro-feature-card');
 
   if (proModal) {
-    openProButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        proModal.showModal();
+    proFeatureCards.forEach(card => {
+      card.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const allowed = await window.requireAuthOrPro();
+        if (allowed) {
+          // Future: actually open the specific pro feature
+          // For now just alert or nothing since we are just locking it
+          alert('Pro feature unlocked! (Implementation pending)');
+        }
+      });
+    });
+
+    document.addEventListener('authStateUpdated', async () => {
+      const isPro = await window.isUserPro();
+      document.querySelectorAll('.pro-lock-icon').forEach(icon => {
+        icon.style.display = isPro ? 'none' : 'block';
       });
     });
 
