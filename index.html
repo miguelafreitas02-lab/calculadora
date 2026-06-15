@@ -838,15 +838,23 @@
     </div>
   </dialog>
 
-  <dialog class="profile-modal pro-modal" id="profile-modal">
+  <dialog class="profile-modal pro-modal premium-modal" id="profile-modal" style="background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));">
     <div class="pro-modal-content" style="max-width: 500px; padding: var(--space-xl);">
-      <button class="modal-close" aria-label="Close" id="profile-modal-close">
+      <button class="modal-close premium-close" aria-label="Close" id="profile-modal-close">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
-      
-      <div style="text-align: center; margin-bottom: 24px;">
-        <div id="profile-modal-avatar" style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 16px;">U</div>
-        <h2 id="profile-modal-email" style="margin-bottom: 8px;">user@example.com</h2>
+
+      <div style="text-align: center; margin-bottom: 24px; position: relative;">
+        <!-- Animated Golden Lock -->
+        <div class="golden-lock-anim" style="margin: 0 auto 16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+
+        <div id="profile-modal-avatar" style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 16px; box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);">U</div>
+        <h2 id="profile-modal-email" style="margin-bottom: 8px; font-size: 1.25rem; font-weight: 700;">user@example.com</h2>
         <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
           <span id="profile-modal-plan-badge" class="badge-free">FREE</span>
           <span id="profile-modal-date" style="font-size: 0.85rem; color: var(--color-text-muted);">Membro desde: --</span>
@@ -854,33 +862,54 @@
       </div>
 
       <div id="profile-free-view">
-        <h3 style="margin-bottom: 16px; font-size: 1.1rem;" data-i18n="profile.upgrade_title">Faça Upgrade para o Pro</h3>
-        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px;" data-i18n="profile.upgrade_desc">Desbloqueie calculadoras avançadas, projeções de crescimento e salve seus cenários.</p>
+        <h3 style="margin-bottom: 8px; font-size: 1.4rem; text-align: center;" data-i18n="profile.upgrade_title">Faça Upgrade para o Pro</h3>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 24px; text-align: center;" data-i18n="profile.upgrade_desc">Desbloqueie calculadoras avançadas, projeções de crescimento e salve seus cenários.</p>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 16px; text-align: center; background: var(--color-surface-hover);">
-            <div style="font-weight: 600; margin-bottom: 8px;" data-i18n="profile.monthly">Mensal</div>
-            <div style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 16px;">$4.99<span style="font-size: 0.85rem; color: var(--color-text-muted);">/mês</span></div>
-            <a href="/upgrade" class="btn btn-outline" style="width: 100%; display: block; text-align: center; text-decoration: none;" data-i18n="profile.choose_plan">Escolher</a>
+          <!-- Monthly Card -->
+          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 20px 16px; text-align: center; background: var(--color-surface); transition: transform 0.2s, box-shadow 0.2s;" class="hover-lift">
+            <div style="font-weight: 600; margin-bottom: 8px; font-size: 1.1rem;" data-i18n="profile.monthly">Mensal</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 16px;">$4.99<span style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">/mês</span></div>
+            <ul style="text-align: left; list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.8;">
+              <li><span style="color: #10B981; margin-right: 6px; font-weight: bold;">✓</span> Todas as calculadoras</li>
+              <li><span style="color: #10B981; margin-right: 6px; font-weight: bold;">✓</span> Projeções crescimento</li>
+              <li><span style="color: #10B981; margin-right: 6px; font-weight: bold;">✓</span> PDF Premium</li>
+            </ul>
+            <a href="/upgrade" class="btn btn-outline btn-choose" style="width: 100%; display: block; text-align: center; text-decoration: none;" data-i18n="profile.choose_plan">Escolher</a>
           </div>
-          <div style="border: 2px solid var(--color-primary); border-radius: var(--radius-md); padding: 16px; text-align: center; background: rgba(145, 70, 255, 0.05); position: relative;">
-            <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--color-primary); color: white; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;" data-i18n="profile.best_value">Melhor Valor</div>
-            <div style="font-weight: 600; margin-bottom: 8px;" data-i18n="profile.lifetime">Vitalício</div>
-            <div style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 16px;">$29<span style="font-size: 0.85rem; color: var(--color-text-muted);">/único</span></div>
-            <a href="/upgrade" class="btn btn-primary" style="width: 100%; display: block; text-align: center; text-decoration: none;" data-i18n="profile.choose_plan">Escolher</a>
+
+          <!-- Lifetime Card -->
+          <div class="lifetime-card hover-lift" style="border: 2px solid var(--color-primary); border-radius: var(--radius-lg); padding: 20px 16px; text-align: center; background: rgba(108, 92, 231, 0.08); position: relative; box-shadow: 0 0 24px rgba(108, 92, 231, 0.25);">
+            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)); color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4); white-space: nowrap;" data-i18n="profile.best_value">Melhor Valor</div>
+            <div style="font-weight: 700; margin-bottom: 8px; font-size: 1.1rem; color: var(--color-primary);" data-i18n="profile.lifetime">Vitalício</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 4px;">$29<span style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 500;">/único</span></div>
+            <div style="color: #10B981; font-size: 0.8rem; font-weight: 600; margin-bottom: 16px;">Economia de 51%*</div>
+            <ul style="text-align: left; list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.8;">
+              <li><span style="color: #10B981; margin-right: 6px; font-weight: bold;">✓</span> <b>Acesso vitalício</b></li>
+              <li><span style="color: #10B981; margin-right: 6px; font-weight: bold;">✓</span> Atualizações inclusas</li>
+              <li><span style="color: #10B981; margin-right: 6px; font-weight: bold;">✓</span> Salvar até 50 cenários</li>
+            </ul>
+            <a href="/upgrade" class="btn btn-primary btn-choose" style="width: 100%; display: block; text-align: center; text-decoration: none; box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);" data-i18n="profile.choose_plan">Escolher</a>
           </div>
         </div>
+
+        <p style="text-align: center; font-size: 0.8rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Cancela a qualquer momento · Pagamento seguro
+        </p>
       </div>
 
-      <div id="profile-pro-view" style="display: none; background: rgba(145, 70, 255, 0.05); border: 1px solid var(--color-primary); border-radius: var(--radius-md); padding: 24px; text-align: center;">
-        <div style="font-size: 2.5rem; margin-bottom: 16px;">✨</div>
-        <h3 style="margin-bottom: 8px; color: var(--color-primary);" data-i18n="profile.pro_thanks_title">Obrigado por ser Pro!</h3>
-        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 20px;" data-i18n="profile.pro_thanks_desc">Seu suporte nos ajuda a manter a ferramenta e adicionar mais plataformas. Você tem acesso vitalício a todos os recursos abaixo.</p>
-        <ul style="text-align: left; font-size: 0.9rem; color: var(--color-text); line-height: 1.6; list-style: none; padding: 0;">
-          <li>✅ <span data-i18n="pro.export_pdf">Exportar PDF Premium</span></li>
-          <li>✅ <span data-i18n="pro.reverse_calc">Calculadora Inversa</span></li>
-          <li>✅ <span data-i18n="pro.projection">Projeções de Crescimento</span></li>
-          <li>✅ <span data-i18n="pro.save_scenarios">Salvar e Comparar</span></li>
+      <div id="profile-pro-view" style="display: none; background: rgba(145, 70, 255, 0.05); border: 1px solid var(--color-primary); border-radius: var(--radius-lg); padding: 32px; text-align: center; box-shadow: 0 8px 24px rgba(108, 92, 231, 0.15);">
+        <div style="margin: 0 auto 16px;">
+           <span style="font-size: 3rem; display: block; margin-bottom: 16px; filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.4));">✨</span>
+        </div>
+        <h3 style="margin-bottom: 12px; font-size: 1.5rem; color: var(--color-primary);" data-i18n="profile.pro_thanks_title">Obrigado por ser Pro!</h3>
+        <p style="color: var(--color-text-secondary); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6;" data-i18n="profile.pro_thanks_desc">Seu suporte nos ajuda a manter a ferramenta e adicionar mais plataformas. Você tem acesso a todos os recursos.</p>
+        <ul style="text-align: left; font-size: 0.95rem; color: var(--color-text-primary); line-height: 1.8; list-style: none; padding: 0; display: inline-block;">
+          <li><span style="color: #10B981; margin-right: 8px; font-weight: bold;">✓</span> <span data-i18n="pro.export_pdf">Exportar PDF Premium</span></li>
+          <li><span style="color: #10B981; margin-right: 8px; font-weight: bold;">✓</span> <span data-i18n="pro.reverse_calc">Calculadora Inversa</span></li>
+          <li><span style="color: #10B981; margin-right: 8px; font-weight: bold;">✓</span> <span data-i18n="pro.projection">Projeções de Crescimento</span></li>
+          <li><span style="color: #10B981; margin-right: 8px; font-weight: bold;">✓</span> <span data-i18n="pro.save_scenarios">Salvar e Comparar</span></li>
         </ul>
       </div>
     </div>

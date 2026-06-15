@@ -1220,3 +1220,21 @@
 .auth-terms a:hover {
   text-decoration: underline;
 }
+
+/* Premium Profile Upgrade Hover Effects */
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.lifetime-card:hover {
+  box-shadow: 0 0 32px rgba(108, 92, 231, 0.4) !important;
+}
+
+.btn-choose {
+  transition: all 0.2s ease;
+}
+
+.btn-choose:hover {
+  transform: scale(1.02);
+}
