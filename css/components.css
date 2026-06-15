@@ -1238,3 +1238,51 @@
 .btn-choose:hover {
   transform: scale(1.02);
 }
+
+/* Premium Profile Upgrade Responsive Layout */
+.premium-profile-content {
+  width: 100%;
+  max-width: 700px; /* Wider for desktop */
+  padding: var(--space-xl);
+}
+
+.upgrade-plans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.upgrade-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  text-align: center;
+  background: var(--color-surface);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.upgrade-card .btn-choose {
+  margin-top: auto; /* Pushes button to the bottom to align heights */
+}
+
+.lifetime-card {
+  border: 2px solid var(--color-primary);
+  background: rgba(108, 92, 231, 0.08);
+  position: relative;
+  box-shadow: 0 0 24px rgba(108, 92, 231, 0.25);
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .premium-profile-content {
+    min-width: 600px; /* Minimum width on desktop */
+  }
+  
+  .upgrade-plans-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
