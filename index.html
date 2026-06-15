@@ -33,7 +33,8 @@
       "imports": {
         "firebase/app": "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js",
         "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js",
-        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js",
+        "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js"
       }
     }
   </script>
@@ -764,52 +765,75 @@
   <div class="ad-container ad-sticky-footer" id="ad-slot-sticky-footer" aria-hidden="true" role="complementary" aria-label="Advertisement"></div>
 
   <!-- ===== PRO Modal ===== -->
-  <!-- Auth Modal -->
   <dialog class="auth-modal pro-modal" id="auth-modal">
-    <div class="pro-modal-content" style="max-width: 400px; padding: var(--space-xl);">
-      <button class="modal-close" aria-label="Close" id="auth-modal-close">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <div class="pro-modal-content premium-modal">
+      <button class="modal-close premium-close" aria-label="Close" id="auth-modal-close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
       
-      <div class="auth-tabs" style="display: flex; gap: 16px; border-bottom: 1px solid var(--color-border); margin-bottom: 24px;">
-        <button class="auth-tab active" id="tab-login" data-i18n="auth.tab_login" style="background: none; border: none; color: var(--color-text); font-weight: 600; padding: 8px 0; border-bottom: 2px solid var(--color-primary); cursor: pointer;">Entrar</button>
-        <button class="auth-tab" id="tab-signup" data-i18n="auth.tab_signup" style="background: none; border: none; color: var(--color-text-muted); font-weight: 600; padding: 8px 0; cursor: pointer;">Criar conta</button>
+      <div class="modal-header-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h2 id="auth-modal-title" class="premium-modal-title">Bem-vindo de volta</h2>
+      <p class="premium-modal-subtitle">Acesse sua conta para continuar</p>
+      
+      <div class="auth-tabs premium-tabs">
+        <button class="auth-tab active" id="tab-login" data-i18n="auth.tab_login">Entrar</button>
+        <button class="auth-tab" id="tab-signup" data-i18n="auth.tab_signup">Criar conta</button>
       </div>
 
       <div class="auth-form-container">
         <form id="auth-form">
-          <div class="form-group" style="margin-bottom: 16px;">
-            <label for="auth-email" data-i18n="auth.email_label" style="display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 500;">Email</label>
-            <input type="email" id="auth-email" required class="form-input" style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-surface-hover); color: var(--color-text);">
+          <div class="form-group premium-input-group">
+            <label for="auth-email" data-i18n="auth.email_label">Email</label>
+            <div class="input-wrapper">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="input-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <input type="email" id="auth-email" required class="form-input has-icon">
+            </div>
           </div>
-          <div class="form-group" style="margin-bottom: 16px;">
-            <label for="auth-password" data-i18n="auth.password_label" style="display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 500;">Senha</label>
-            <input type="password" id="auth-password" required minlength="8" class="form-input" style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-surface-hover); color: var(--color-text);">
+          <div class="form-group premium-input-group">
+            <div class="label-row">
+              <label for="auth-password" data-i18n="auth.password_label">Senha</label>
+              <a href="#" id="link-forgot-password" data-i18n="auth.forgot_password" class="forgot-link">Esqueci minha senha</a>
+            </div>
+            <div class="input-wrapper">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="input-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <input type="password" id="auth-password" required minlength="8" class="form-input has-icon has-toggle">
+              <button type="button" id="toggle-password" class="toggle-password-btn" aria-label="Mostrar senha">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
           </div>
-          <div class="form-group" id="group-confirm-password" style="display: none; margin-bottom: 16px;">
-            <label for="auth-confirm-password" data-i18n="auth.confirm_password_label" style="display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 500;">Confirmar Senha</label>
-            <input type="password" id="auth-confirm-password" minlength="8" class="form-input" style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-surface-hover); color: var(--color-text);">
+          <div class="form-group premium-input-group" id="group-confirm-password" style="display: none;">
+            <label for="auth-confirm-password" data-i18n="auth.confirm_password_label">Confirmar Senha</label>
+            <div class="input-wrapper">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="input-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <input type="password" id="auth-confirm-password" minlength="8" class="form-input has-icon has-toggle">
+              <button type="button" id="toggle-confirm-password" class="toggle-password-btn" aria-label="Mostrar senha">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
           </div>
 
-          <div class="auth-error" id="auth-error-msg" style="display: none; color: #ff4d4d; font-size: 0.85rem; margin-bottom: 16px;"></div>
+          <div class="auth-error" id="auth-error-msg" style="display: none;"></div>
 
-          <button type="submit" class="btn btn-primary" id="btn-submit-auth" style="width: 100%; padding: 12px;" data-i18n="auth.submit_login">Entrar</button>
+          <button type="submit" class="btn btn-primary premium-submit" id="btn-submit-auth" data-i18n="auth.submit_login">Entrar</button>
         </form>
 
-        <div class="auth-forgot-password" id="forgot-password-container" style="text-align: center; margin-top: 16px;">
-          <a href="#" id="link-forgot-password" data-i18n="auth.forgot_password" style="color: var(--color-text-muted); font-size: 0.85rem; text-decoration: none;">Esqueci minha senha</a>
+        <div class="auth-divider">
+          <hr>
+          <span data-i18n="auth.or">ou continue com</span>
+          <hr>
         </div>
 
-        <div class="auth-divider" style="display: flex; align-items: center; text-align: center; margin: 24px 0; color: var(--color-text-muted); font-size: 0.85rem;">
-          <hr style="flex: 1; border: none; border-top: 1px solid var(--color-border);">
-          <span data-i18n="auth.or" style="padding: 0 10px;">ou</span>
-          <hr style="flex: 1; border: none; border-top: 1px solid var(--color-border);">
-        </div>
-
-        <button class="btn btn-outline btn-google" id="btn-google-login" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text);">
-          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <button class="btn btn-outline btn-google premium-google" id="btn-google-login">
+          <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
           <span data-i18n="auth.google_login">Entrar com Google</span>
         </button>
+
+        <p class="auth-terms">
+          Ao criar uma conta, você concorda com nossos <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>.
+        </p>
       </div>
     </div>
   </dialog>

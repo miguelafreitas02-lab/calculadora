@@ -39,6 +39,11 @@ const btnSubmitAuth = document.getElementById('btn-submit-auth');
 const linkForgotPassword = document.getElementById('link-forgot-password');
 const btnGoogleLogin = document.getElementById('btn-google-login');
 
+// Premium UI Elements
+const authModalTitle = document.getElementById('auth-modal-title');
+const togglePasswordBtn = document.getElementById('toggle-password');
+const toggleConfirmPasswordBtn = document.getElementById('toggle-confirm-password');
+
 // State
 let isSignupMode = false;
 
@@ -96,6 +101,14 @@ export function initAuth() {
     signOut(auth);
   });
 
+  // Toggle Password Visibility
+  if (togglePasswordBtn) {
+    togglePasswordBtn.addEventListener('click', () => togglePassword(inputPassword, togglePasswordBtn));
+  }
+  if (toggleConfirmPasswordBtn) {
+    toggleConfirmPasswordBtn.addEventListener('click', () => togglePassword(inputConfirmPassword, toggleConfirmPasswordBtn));
+  }
+
   // Auth Observer
   onAuthStateChanged(auth, handleAuthStateChanged);
 }
@@ -114,7 +127,10 @@ export function closeAuthModal() {
 function setMode(signup) {
   isSignupMode = signup;
   authErrorMsg.style.display = 'none';
+  const authModalSubtitle = document.querySelector('.premium-modal-subtitle');
   if (signup) {
+    if (authModalTitle) authModalTitle.textContent = 'Comece gratuitamente';
+    if (authModalSubtitle) authModalSubtitle.textContent = 'Crie sua conta para acessar os recursos PRO';
     tabSignup.classList.add('active');
     tabLogin.classList.remove('active');
     groupConfirmPassword.style.display = 'block';
@@ -122,12 +138,24 @@ function setMode(signup) {
     btnSubmitAuth.textContent = t('auth.submit_signup') || 'Criar conta';
     linkForgotPassword.style.display = 'none';
   } else {
+    if (authModalTitle) authModalTitle.textContent = 'Bem-vindo de volta';
+    if (authModalSubtitle) authModalSubtitle.textContent = 'Acesse sua conta para continuar';
     tabLogin.classList.add('active');
     tabSignup.classList.remove('active');
     groupConfirmPassword.style.display = 'none';
     inputConfirmPassword.required = false;
     btnSubmitAuth.textContent = t('auth.submit_login') || 'Entrar';
     linkForgotPassword.style.display = 'block';
+  }
+}
+
+function togglePassword(inputEl, btnEl) {
+  if (inputEl.type === 'password') {
+    inputEl.type = 'text';
+    btnEl.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24M1 1l22 22"/></svg>';
+  } else {
+    inputEl.type = 'password';
+    btnEl.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
   }
 }
 
