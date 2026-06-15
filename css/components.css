@@ -978,6 +978,19 @@
   box-shadow: var(--shadow-lg), 0 0 0 1px var(--color-border);
 }
 
+.premium-upgrade-modal {
+  padding: 0;
+  border-radius: var(--radius-xl);
+  background: rgba(var(--color-surface-rgb, 30, 41, 59), 0.85); /* Fallback */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--color-border);
+  width: 90%;
+  max-width: max-content;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
 /* Add RGB variable fallback to surface */
 :root {
   --color-surface-rgb: 255, 255, 255;
@@ -986,8 +999,11 @@
   --color-surface-rgb: 30, 41, 59;
 }
 
-[data-theme="light"] .premium-modal { background: rgba(255, 255, 255, 0.85); }
-[data-theme="dark"] .premium-modal { background: rgba(30, 41, 59, 0.85); }
+[data-theme="light"] .premium-modal,
+[data-theme="light"] .premium-upgrade-modal { background: rgba(255, 255, 255, 0.85); }
+
+[data-theme="dark"] .premium-modal,
+[data-theme="dark"] .premium-upgrade-modal { background: rgba(30, 41, 59, 0.85); }
 
 /* Dialog backdrop blur */
 .pro-modal::backdrop {
