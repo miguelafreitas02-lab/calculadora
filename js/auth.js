@@ -294,13 +294,18 @@ async function handleAuthStateChanged(user) {
         updateUserUI();
       } else {
         // Fallback if doc doesn't exist yet
-        await createInitialUserDoc(user);
-        const retrySnap = await getDoc(userRef);
-        currentUserDoc = retrySnap.data();
+        try {
+          await createInitialUserDoc(user);
+          const retrySnap = await getDoc(userRef);
+          currentUserDoc = retrySnap.data();
+        } catch(innerErr) {
+          console.warn("Could not create/fetch initial user doc:", innerErr);
+        }
         updateUserUI();
       }
     } catch(err) {
-      console.error("Error fetching user data:", err);
+      console.warn("Error fetching user data:", err);
+      updateUserUI(); // Still update UI to show free state
     }
   } else {
     // Logged out
@@ -378,24 +383,34 @@ window.isUserPro = async function() {
   if (!currentFirebaseUser) return false;
   if (!currentUserDoc) {
     // Fallback sync fetch if not loaded
-    const userRef = doc(db, 'users', currentFirebaseUser.uid);
-    const docSnap = await getDoc(userRef);
-    if(docSnap.exists()) currentUserDoc = docSnap.data();
+    try {
+      const userRef = doc(db, 'users', currentFirebaseUser.uid);
+      const docSnap = await getDoc(userRef);
+      if(docSnap.exists()) currentUserDoc = docSnap.data();
+    } catch(err) {
+      console.warn("isUserPro fallback fetch failed:", err);
+    }
   }
   return currentUserDoc && currentUserDoc.plan === 'pro';
 };
 
 window.requireAuthOrPro = async function() {
+  console.log("requireAuthOrPro started", { currentFirebaseUser });
   if (!currentFirebaseUser) {
     openAuthModal();
     return false;
   }
   
-  const isPro = await window.isUserPro();
-  if (!isPro) {
-    // Show Upgrade Modal (Profile Modal)
-    if (profileModal) profileModal.showModal();
-    return false;
+  try {
+    const isPro = await window.isUserPro();
+    console.log("requireAuthOrPro -> isPro:", isPro);
+    if (!isPro) {
+      console.log("requireAuthOrPro -> showing profileModal");
+      if (profileModal) profileModal.showModal();
+      return false;
+    }
+  } catch(err) {
+    console.error("requireAuthOrPro error:", err);
   }
   
   return true;
