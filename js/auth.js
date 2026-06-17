@@ -111,6 +111,27 @@ export function initAuth() {
 
   // Auth Observer
   onAuthStateChanged(auth, handleAuthStateChanged);
+
+  // Pro Feature Cards Setup
+  const proBtns = [
+    document.getElementById('btn-pro-export-pdf'),
+    document.getElementById('btn-pro-reverse-calc'),
+    document.getElementById('btn-pro-projection'),
+    document.getElementById('btn-pro-save-scenarios')
+  ];
+
+  proBtns.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', async () => {
+        const canAccess = await window.requireAuthOrPro();
+        if (canAccess) {
+          // Future implementation: execute the pro functionality
+          console.log('User is PRO, executing functionality for', btn.id);
+          alert('Funcionalidade PRO ativada! (Em desenvolvimento)');
+        }
+      });
+    }
+  });
 }
 
 function openAuthModal() {
@@ -286,6 +307,7 @@ async function handleAuthStateChanged(user) {
     currentUserDoc = null;
     btnLogin.style.display = 'block';
     userProfileMenu.style.display = 'none';
+    updateUserUI();
   }
   
   // Dispatch event for other modules to re-render locks
@@ -322,6 +344,9 @@ function updateUserUI() {
       pFreeView.style.display = 'none';
       pProView.style.display = 'block';
     }
+    
+    // Hide locks
+    document.querySelectorAll('.pro-lock-icon').forEach(el => el.style.display = 'none');
   } else {
     badge.textContent = t('auth.badge_free') || 'FREE';
     badge.className = 'badge-free';
@@ -334,6 +359,9 @@ function updateUserUI() {
       pFreeView.style.display = 'block';
       pProView.style.display = 'none';
     }
+
+    // Show locks
+    document.querySelectorAll('.pro-lock-icon').forEach(el => el.style.display = 'block');
   }
   
   if (pDate && currentUserDoc && currentUserDoc.createdAt) {
